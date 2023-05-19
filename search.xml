@@ -1,22 +1,313 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Hello World</title>
-    <url>/posts/3eeb.html</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+    <title>英语翻译练习</title>
+    <url>/posts/1429.html</url>
+    <content><![CDATA[<p>英语翻译练习，加强阅读能力，每日必备！！</p>
+<span id="more"></span>
 
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<h1 id="现象分析文"><a href="#现象分析文" class="headerlink" title="现象分析文"></a>现象分析文</h1><p>就现象分析原因，往往带有作者主观色彩</p>
+<h2 id="Passage-1"><a href="#Passage-1" class="headerlink" title="Passage 1"></a>Passage 1</h2><p><strong>2001.Text.3</strong></p>
+<h3 id="Paragraph1"><a href="#Paragraph1" class="headerlink" title="Paragraph1"></a>Paragraph1</h3><p>① Why do so many Americans distrust what they read in their newspapers? </p>
+<p>​	为什么很多美国人不相信他们在他们的报纸里读到的东西</p>
+<p>② The American Society of Newspaper Editors is trying to answer this painful question. </p>
+<p>​	美国报纸编辑协会正试图回答这个痛苦的问题</p>
+<p>③ The organization is deep into a long self-analysis known as the journalism credibility project.</p>
+<p>​	该组织正深入(deep into)长期的自我分析称为(known as)新闻可信度（credobility）项目</p>
+<h3 id="Paragraph2"><a href="#Paragraph2" class="headerlink" title="Paragraph2"></a>Paragraph2</h3><p>① <strong>Sad to say</strong>, this project has turned out to be mostly low-level findings about factual errors and spelling and grammar mistakes, combined with lots of head scratching puzzlement about what in the world those readers really want.</p>
+<p>​	遗憾的是，这次项目的结果证明（turned out）很大程度上是(is mostly)低级的发现关于事实错误和拼写与语法上的错误，还有一些令人头痛(head scratching)的问题关于这些读者真正想要的究竟（in the world）是什么。</p>
+<p>② <strong>But</strong> the sources of distrust go way deeper. </p>
+<p>​	但是这种不信任的源头走得更深（go way deeper）</p>
+<p>③ Most journalists learn to see the world through a set of standard templates (patterns) <strong>into which</strong> they plug each day’s events.</p>
+<p>​	大多数记者学着去看待这个世界通过一套的标准模板，模板被他们插入每天发生的事。</p>
+<p>​	“<strong>into which</strong>“是连接两个句子或从句的关系代词,<strong>表示前面的句子中的某物进入或转换成后面的句子所述的状态或形式</strong>。</p>
+<p>​	例如: This is a crisis into which we never dreamed we would enter.</p>
+<p>​	表示: “我们从未梦想我们会陷入这种危机之中”。</p>
+<p>​	又如: His anger changed into a calmness into which I couldn’t penetrate.<br>​    表示: “他的愤怒转变成一种宁静,这种宁静我无法理解。”</p>
+<p>​	本句话还可以翻译为：大多数记者学会通过一套标准模板(模式)来观察世界，他们把每天发生的事情都塞进去（这种模式）。</p>
+<p>④ In other words, there is a conventional story line in the newsroom culture that provides a backbone and a ready-made narrative structure for otherwise confusing news.</p>
+<p>​	换言之，在新闻采编室文化中有一个传统的&#x2F;约定成俗的（conventional）写作模式（story line），为原本（otherwise）复杂的新闻提供一个主干框架和一个现成的叙述(narrative)结构。</p>
+<h3 id="Paragraph3"><a href="#Paragraph3" class="headerlink" title="Paragraph3"></a>Paragraph3</h3><p>① There exists a social and cultural disconnect between journalists and their readers, which helps explain why the “standard templates” of the newsroom seem alien to many readers. </p>
+<p>​	在作者和读者之间存在一个社会和文化的断联，这有助于解释为什么对大多数读者而言新闻采编室的标准模板看起来是陌生的（alien）</p>
+<p>② In a recent survey, questionnaires were sent to reporters in five middle-size cities around the country, plus one large metropolitan area.</p>
+<p>​	在最近的调查里，问卷被送到了全国5座中等都市，加上（及）一座大都市(metropolitan)的记者手中。</p>
+<p>③ Then residents in these communities were phoned at random and asked the same questions.</p>
+<p>​	然后这些城市的居民被随机打电话并且被问相同的问题。</p>
+<h3 id="Paragraph4"><a href="#Paragraph4" class="headerlink" title="Paragraph4"></a>Paragraph4</h3><p>① Replies show that compared with other Americans, journalists are more likely to live in upscale neighborhoods, have maids, own Mercedeses, and trade stocks, and they’re less likely to go to church, do volunteer work, or put down roots in a community.</p>
+<p>​	结果表明：相比与其他美国人，新闻记者更可能住在大规模社区，有女仆，有奔驰，有股票，并且他们很少可能去教堂，做志愿者工作，或者扎根社区。</p>
+<h3 id="Paragraph5"><a href="#Paragraph5" class="headerlink" title="Paragraph5"></a>Paragraph5</h3><p>① Reporters <strong>tend to</strong> be part of a broadly defined social and cultural elite, so their work tends to reflect the conventional values of this elite. </p>
+<p> 记者往往（tend to）被广泛地定义为是社会文化精英的一个部分，因此他们的工作往往反映了这些精英传统的价值观</p>
+<p>② The astonishing distrust of the news media isn’t <strong>rooted</strong> in inaccuracy or poor reportorial skills <strong>but</strong> in the daily clash of world views between reporters and their readers.</p>
+<p>​	新闻媒体造成的令人惊讶的不信任根本（root）不是（并非）不准确或者贫瘠的报道技巧而是在日常中作者和他们读者间不同世界观的碰撞。</p>
+<h3 id="Paragraph6"><a href="#Paragraph6" class="headerlink" title="Paragraph6"></a>Paragraph6</h3><p>① This is an explosive situation for any industry, particularly a declining one.</p>
+<p>​	这是一个爆炸性(explosive)的情况对任何一个行业，尤其是走下坡路的行业。</p>
+<p>② Here is a troubled business that keeps hiring employees whose attitudes vastly annoy the customers. </p>
+<p>​	这是一个困难的行业：雇佣者雇佣员工的态度非常惹怒顾客</p>
+<p>③ Then it sponsors lots of symposiums and a credibility project dedicated to wondering why customers are annoyed and fleeing in large numbers. </p>
+<p>​	因此美国报纸编辑协会赞助了许多研讨会和可信度调查项目专注于搞明白为什么顾客们烦恼并且逃避新闻。</p>
+<p>④ But it never seems to <strong>get around to</strong> noticing the cultural and class biases that so many former buyers are complaining about. </p>
+<p>​	但是它似乎从来没有抽空(get aroud to)注意到哪些许多先前的购买者抱怨的文化和阶级偏见。</p>
+<p>⑤ If it did, it would <strong>open up</strong> its diversity program, now focused narrowly on race and gender, and look for reporters who differ broadly by outlook, values, education, and class.</p>
+<p>​	如果它注意到了，它就应该展开（open up）它的多样化项目（目前狭隘地专注于种族和性别）并且寻找在态度，价值观，教育和阶级有很大不同的记者。</p>
+<h3 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h3><ol>
+<li>The results of the journalism credibility project turned out ____.</li>
+</ol>
+<p>​		新闻可信度项目的结果是，</p>
+<p>​		A. Quite trustworthy.（相当值得信赖）</p>
+<p>​		B. Somewhat contradictory.（有些矛盾）</p>
+<p>​		C. Very illustrating.（非常清晰的）</p>
+<p>​		D. Rather superficial.（非常肤浅）</p>
+<ol start="2">
+<li>The basic problem of journalists as pointed out by the writer lies in their ____.</li>
+</ol>
+<p>​		作者指出新闻记者的根本问题在于他们的</p>
+<p>​		A. Working attitude.（工作态度）</p>
+<p>​		B. Conventional lifestyle.（传统的生活方式）</p>
+<p>​		C. World outlook.（时间观）</p>
+<p>​		D. Educational background.（教育背景）</p>
+<ol start="3">
+<li>Despite its efforts, the newspaper industry still cannot satisfy the readers owing to its ____.</li>
+</ol>
+<p>​		尽管它付出了努力，报纸行业依然不能满足注册归因于它的</p>
+<p>​		A. Failure to realize its real problem.（没能意识到真正的问题）</p>
+<p>​		B. Tendency to hire annoying reporters.（倾向雇佣令人恼怒的记者）</p>
+<p>​		C. Likeliness to do inaccurate reporting.（做不准确的报告的可能性）</p>
+<p>​		D. Prejudice in matters of race and gender.（种族和性别问题上的偏见）</p>
+<ol start="4">
+<li>What is the passage mainly about?</li>
+</ol>
+<p>​		A. Needs of the readers all over the world.（全世界读者的需求）</p>
+<p>​		B. Causes of the public disappointment about newspaper.（大众不满意新闻报纸的原因）</p>
+<p>​		C. Origins of the declining newspaper industry.（报纸行业衰退的起因）</p>
+<p>​		D. Aims of a journalism credibility project.（新闻可信度项目的目的）</p>
+<p>答案：D，C，A，B</p>
+<h2 id="Passage2"><a href="#Passage2" class="headerlink" title="Passage2"></a>Passage2</h2><p><strong>1997.Text.2</strong></p>
+<h3 id="Paragraph1-1"><a href="#Paragraph1-1" class="headerlink" title="Paragraph1"></a>Paragraph1</h3><p>① A report consistently brought back by visitors to the US is how friendly, courteous, and helpful most Americans were to them. </p>
+<p>​	一个报告经常（consistently）被去美国的旅客带回：美国人对于他们是如此友好的，好客的（courteous），助人的。</p>
+<p>② To be fair, this observation is also frequently made of Canada and Canadians, and should best be considered North American. </p>
+<p>​	实在地说，加拿大和加拿大人也频繁地有这样的评论（observation），最好应该认为是北美的地区的人。</p>
+<p>③ There are, of course, exceptions. </p>
+<p>​	这当然也有例外</p>
+<p>④ Small-minded officials, rude waiters, and ill-mannered taxi drivers are hardly unknown in the US. </p>
+<p>​	在美国小肚鸡肠的官员，粗鲁的服务员和不礼貌的出租车司机并不少见</p>
+<p>⑤ <strong>Yet</strong> it is an observation made so frequently that it deserves comment.</p>
+<p>​	然而，被如此频繁评论，它是值得加以讨论的</p>
+<h3 id="Paragraph2-1"><a href="#Paragraph2-1" class="headerlink" title="Paragraph2"></a>Paragraph2</h3><p>① For a long period of time and in many parts of the country, a traveler was a welcome break in an otherwise dull existence. </p>
+<p>​	在很长的时期和大部分国家，在一个原本枯燥乏味的生活（existence&#x3D;life）中旅客们是受欢迎的消遣。</p>
+<p>② Dullness and loneliness were common problems of the families who generally lived distant from one another.</p>
+<p>​	枯燥和孤独是那些通常彼此相距遥远（distant from one another）家庭的共同问题</p>
+<p>③ Strangers and travelers were welcome sources of diversion, and brought news of the outside world.</p>
+<p>​	陌生人和旅客们是被欢迎的消遣根源，并且带来一些外界新的事物。</p>
+<h3 id="Paragraph3-1"><a href="#Paragraph3-1" class="headerlink" title="Paragraph3"></a>Paragraph3</h3><p>① The harsh realities of the frontier also shaped this tradition of hospitality. </p>
+<p>​	边境的艰难现实也形成了这传统的友好。</p>
+<p>② Someone traveling alone, if hungry, injured, or ill, often had nowhere to turn except to the nearest cabin or settlement.</p>
+<p>​	 一些独自旅行的人，如果饥饿，受伤或者生病，经常除了去附近的木屋或定居点就没有地方去。</p>
+<p>③ It was not a matter of choice for the traveler or merely a charitable impulse on the part of the settlers. </p>
+<p>​	这对旅行者不是一个选择的问题，且对部分居住的人不仅仅是慈善的冲动（impulse）</p>
+<p>④ It reflected the harshness of daily life: if you didn’t take in the stranger and take care of him, there was no one else who would.</p>
+<p>​	它反应了日常生活的艰辛：如果你不接纳陌生人并且照顾他，就没有其他人会这样做。</p>
+<p>⑤ And someday, remember, you might be in the same situation.</p>
+<p>​	并且记住某天你也可能处于相同的情况。</p>
+<h3 id="Paragraph4-1"><a href="#Paragraph4-1" class="headerlink" title="Paragraph4"></a>Paragraph4</h3><p>① Today there are many charitable organizations which specialize in helping the weary traveler. </p>
+<p>​	今天有许多慈善的组织专门在帮助疲惫虚弱的旅客</p>
+<p>② <strong>Yet</strong>, the old tradition of hospitality to strangers is still very strong in the US, especially in the smaller cities and towns away from the busy tourist trails. </p>
+<p>​	然而，在美国对陌生人友善的老传统仍然非常强烈，特别是在远离繁华的旅游路线的小城市和小城镇</p>
+<p>③ “I was just traveling through, got talking with this American, and pretty soon he invited me home for dinner – amazing.”</p>
+<p>​	“惊人！我只是旅行经，和美国人聊了聊，他很快就邀请我去他家共进晚餐.”</p>
+<p>④ Such observations reported by visitors to the US are not uncommon, but are not always understood properly. </p>
+<p>​	这样的评论被去美国的游客反馈并不罕见但并不总是被正确的理解</p>
+<p>⑤ The casual friendliness of many Americans should be interpreted neither as superficial nor as artificial, <strong>but</strong> as the <strong>result</strong> of a historically developed cultural tradition.</p>
+<p>​	许多美国人随意的友好应该被解释既不肤浅也不矫揉造作的，而是由于一个历史发展的文化传统的结果</p>
+<h3 id="Parapraph5"><a href="#Parapraph5" class="headerlink" title="Parapraph5"></a>Parapraph5</h3><p>① <strong>As is true of</strong> any developed society, in America a complex set of cultural signals, assumptions, and conventions underlies all social interrelationships. </p>
+<p>​	就像（as is true of）任何发展社会，在美国，一套复杂的文化标志，假说和习俗构成所有社会关系的基础（underlies构成…的基础）</p>
+<p>② And, of course, speaking a language does not necessarily mean that someone understands social and cultural patterns. </p>
+<pre><code> 当然，说一门语音并不一定意味要人理解社会和文化的模式
+</code></pre>
+<p>③ Visitors who fail to ‘translate’ cultural meanings properly often draw wrong conclusions. </p>
+<p>​	游客没能正确地“翻译”文化的含义通常会得出错误的结论</p>
+<p>④ For example, when an American uses the word ‘friend,’ the cultural implications of the word may be quite different from those it has in the visitor’s language and culture. </p>
+<p>​	比如，当美国人使用单词“friend”，单词的文化含义（implication）也许与那些游客的语言和文化有许多不同。</p>
+<p>⑤ It <strong>takes more than</strong> a brief encounter on a bus to distinguish between courteous convention and individual interest. </p>
+<p>​	它不只是（take more than）一个简短的偶遇在公交车上能区分礼貌惯例和个人兴趣</p>
+<p>⑥ <strong>Yet</strong>, being friendly is a virtue that many Americans value highly and expect from both neighbors and strangers.</p>
+<p>​	然而，保持友好是一个美德，许多美国非常重视，并期望领居和陌生人能友好</p>
+<h3 id="Question-1"><a href="#Question-1" class="headerlink" title="Question"></a>Question</h3><ol>
+<li>In the eyes of visitors from the outside world, ____.</li>
+</ol>
+<p>​		在外界游客的眼中，</p>
+<p>​		A. rude taxi drivers are rarely seen in the US.（粗鲁的司机很少出现在美国）</p>
+<p>​		B. small-minded officials deserve a serious comment.（小肚鸡肠的官员应该得被严重批评）</p>
+<p>​		C. Canadians are not so friendly as their neighbors（加拿大人对他们的邻居是不友好的）</p>
+<p>​		D. most Americans are ready to offer help.（大多数美国人都愿意（ready）提供帮助）</p>
+<ol start="2">
+<li>It could be inferred from the last paragraph that ____.</li>
+</ol>
+<p>​		A. Culture exercises an influence over social interrelationship.（文化对社会相互的关系有影响exercise an influence over）</p>
+<p>​		B. Courteous convention and individual interest are interrelated.（礼貌的惯例和个人的兴趣是相互关联的）</p>
+<p>​		C. Various virtues manifest themselves exclusively among friends.（各种美德（virtues）仅仅（exclusively）在朋友之间among显现出来）</p>
+<p>​		D. Social interrelationships equal the complex set of cultural conventions.（社会关系等于复杂的文化习俗的集合）</p>
+<ol start="3">
+<li>Families in frontier settlements used to entertain strangers ____.</li>
+</ol>
+<p>​		边境定居点的家庭过去常常招待陌生人</p>
+<p>​		A. to improve their hard life.（提高他们的艰难的生活）</p>
+<p>​		B. in view of their long-distance travel.（鉴于（in view）他们远距离的旅行）</p>
+<p>​		C. to add some flavor to their own daily life.（为他们日常生活添加一些情趣）</p>
+<p>​		D. out of a charitable impulse.（出于慈善的冲动）</p>
+<ol start="4">
+<li>The tradition of hospitality to strangers ____.</li>
+</ol>
+<p>​		对陌生人友好的传统</p>
+<p>​		A. tends to be superficial and artificial（往往是肤浅的和矫揉造作的）</p>
+<p>​		B. is generally well kept up in the United States（在美国普遍保持得很好）</p>
+<p>​		C. is always understood properly（总是被正确地理解）</p>
+<p>​		D. <strong>has something to do with</strong> the busy tourist trails.（和（繁忙的旅游路线）有关）</p>
+<p>答案：D，A，C，B</p>
+<h2 id="Passage-12"><a href="#Passage-12" class="headerlink" title="Passage 12"></a>Passage 12</h2><p><strong>2000.Text.4</strong></p>
+<h3 id="Paragraph1-2"><a href="#Paragraph1-2" class="headerlink" title="Paragraph1"></a>Paragraph1</h3><p>① Aimlessness has hardly been typical of the postwar Japan whose productivity and social harmony are the envy of the United States and Europe. </p>
+<p>​	无目的性几乎不是战后日本的典型特征，其生产力和社会和谐令美国和欧洲羡慕不已</p>
+<p>② But increasingly the Japanese are seeing a decline of the traditional work-moral values. </p>
+<p>​	但是，越来越多的日本人看到了传统职业道德价值的衰落</p>
+<p>③ Ten years ago young people were hardworking and saw their jobs as their primary reason for being, but now Japan has largely fulfilled its economic needs, and young people don’t know where they should go next.</p>
+<p>​	十年前，年轻人勤奋工作，将工作视为自己存在的主要原因，但如今日本已经基本满足了经济需求，年轻人不知道接下来该去哪里</p>
+<h3 id="Paragraph2-2"><a href="#Paragraph2-2" class="headerlink" title="Paragraph2"></a>Paragraph2</h3><p>① The coming of age of the postwar baby boom and an entry of women into the male-dominated job market have limited the opportunities of teenagers who are already questioning the heavy personal sacrifices involved in climbing Japan’s rigid social ladder to good schools and jobs. </p>
+<p>​	战后婴儿潮的成年和女性进入男性主导的就业市场，限制了对已经对攀登日本严格社会阶梯上好学校和工作所付出巨大个人牺牲的青少年的机会</p>
+<p>② In a recent survey, it was found that only 24.5 percent of Japanese students were fully satisfied with school life, compared with 67.2 percent of students in the United States. </p>
+<p>​	最近的一项调查发现，只有24.5％的日本学生对学校生活完全满意，而美国学生中有67.2％对此感到满意</p>
+<p>③ In addition, far more Japanese workers expressed dissatisfaction with their jobs than did their counterparts in the 10 other countries surveyed.</p>
+<p>​	此外，在另外10个受调查国家中，更多的日本工人表示对工作不满意</p>
+<h3 id="Paragraph3-2"><a href="#Paragraph3-2" class="headerlink" title="Paragraph3"></a>Paragraph3</h3><p>① While often praised by foreigners for its emphasis on the basics, Japanese education tends to stress test taking and mechanical learning over creativity and self expression. </p>
+<p>​	外国人经常称赞日本教育注重基础知识，但往往强调应试和机械式学习，而不是创造力和自我表达</p>
+<p>② “Those things that do not show up in the test scores— personality, ability, courage or humanity—are completely ignored,” says ToShiki Kaifu, chairman of the ruling Liberal Democratic Party’s education committee.</p>
+<p>​	执政党自由民主党的教育委员会主席葛藤敏树表示：“那些不在考试成绩中显示的事情——个性、能力、勇气或人性——完全被忽视。”</p>
+<p>③ “Frustration against this kind of thing leads kids to drop out and run Wild.”</p>
+<p>​	“对这种事情的沮丧导致孩子们辍学并放任自流。”</p>
+<p>④ Last year Japan experienced 2,125 incidents of school violence, including 929 assaults on teachers. </p>
+<p>​	去年日本发生了2,125起校园暴力事件，其中包括对教师的929起袭击。</p>
+<p>⑤ Amid the outcry, many conservative leaders are seeking a return to the prewar emphasis on moral education. </p>
+<p>​	在强烈抗议声中，许多保守派领导人寻求回归到战前对道德教育的强调。</p>
+<p>⑥ Last year Mitsuo Setoyama, who was then education minister, raised eyebrows when he argued that liberal reforms introduced by the American occupation authorities after World War II had weakened the “Japanese morality of respect for parents.”</p>
+<p>​	去年时任教育部长的瀬戸山光夫在提出，美国占领当局在二战后引入的自由改革削弱了“对父母的尊重的日本道德观”</p>
+<h3 id="Paragraph4-2"><a href="#Paragraph4-2" class="headerlink" title="Paragraph4"></a>Paragraph4</h3><p>① But that may have more to do with Japanese life-styles. </p>
+<p>​	 但这可能更多地与日本的生活方式有关</p>
+<p>② “ln Japan,” says educator Yoko Muro,”it’s never a question of whether you enjoy your job and your life, but only how much you can endure.”</p>
+<p>​	教育家室阳子表示：“在日本，从不是你是否享受工作和生活的问题，而只是你能忍受多少。”</p>
+<p>③ With economic growth has come centralization; fully 76 percent of Japan’s 119 million citizens live in cities where community and the extended family have been abandoned in favor of isolated, two -generation households.</p>
+<p>​	随着经济的增长，集中化成为现实。日本1.19亿人口中，有76%居住在城市，社区和大家庭已被抛弃，代之以孤立的两代人家庭</p>
+<p>④ Urban Japanese have long endured lengthy commutes (travels to and from work) and crowded living conditions, but as the old group and family values weaken, the discomfort is beginning to tell. </p>
+<p>​	城市中的日本人长期以来忍受着长途通勤和拥挤的居住条件，但随着旧有的集体和家庭价值观的减弱，这种不适感开始显现出来。</p>
+<p>⑤ In the past decade, the Japanese divorce rate, while still well below that of the United States, has increased by more than 50 percent, and suicides have increased by nearly one-quarter.</p>
+<p>​	在过去的十年中，日本的离婚率虽然仍远低于美国，但增长了超过50%，自杀人数增加了近四分之一</p>
+<h3 id="Question-2"><a href="#Question-2" class="headerlink" title="Question"></a>Question</h3><p>​	1.In the Westerners’ eyes, the postwar Japan was ___.</p>
+<p>​		A. a positive example</p>
+<p>​		B. under aimless development</p>
+<p>​		C. on the decline</p>
+<p>​		D. a rival to the West</p>
+<ol start="2">
+<li>According to the author, what may chiefly be responsible for the moral decline of Japanese society?</li>
+</ol>
+<p>​		A. More workers are dissatisfied with their jobs.</p>
+<p>​		B. Women’s participation in social activities is Iimited</p>
+<p>​		C. The life-style has been influenced by Western values.</p>
+<p>​		D. Excessive emphasis has been placed on the basics.</p>
+<ol start="3">
+<li>Which of the following is true according to the author?</li>
+</ol>
+<p>​		A. Japanese education is praised for helping the young climb the social ladder.</p>
+<p>​		B. Japanese education is characterized by mechanical learning as well as creativity.</p>
+<p>​		C. Dropping out leads to frustration against test taking.</p>
+<p>​		D. More stress should be placed on the cultivation of creativity.</p>
+<ol start="4">
+<li>The change in Japanese life-style is revealed in the fact that ___.</li>
+</ol>
+<p>​		A. the divorce rate in Japan exceeds that in the U.S.</p>
+<p>​		B. the young are less tolerant of discomforts in life</p>
+<p>​		C. the Japanese endure more than ever before</p>
+<p>​		D. the Japanese appreciate their present life</p>
+<h1 id="立论文"><a href="#立论文" class="headerlink" title="立论文"></a>立论文</h1><h2 id="Passage-4"><a href="#Passage-4" class="headerlink" title="Passage 4"></a>Passage 4</h2><p><strong>2000.Text.1</strong></p>
+<h3 id="Paragraph1-3"><a href="#Paragraph1-3" class="headerlink" title="Paragraph1"></a>Paragraph1</h3><p>① A history of long and effortless success can be a dreadful handicap, but, if properly handled, it may become a driving force. </p>
+<p>​	长期而轻松的成功历史可能成为一种可怕的障碍，但如果妥善处理，它可能成为一种推动力。</p>
+<p>② When the United States entered just such a glowing period after the end of the Second World War, it had a market eight times larger than any competitor, giving its industries unparalleled economies of scale.</p>
+<p>​	 当美国在二战结束后进入了这样一个光辉时期时，它的市场规模是任何竞争对手的八倍，使其工业拥有无与伦比的规模经济效益。</p>
+<p>③ Its scientists were the world’s best, its workers the most skilled.</p>
+<p>​	 它的科学家是世界上最好的，它的工人是最熟练的。</p>
+<p>④ America and Americans were prosperous beyond the dreams of the Europeans and Asians whose economies the war had destroyed.</p>
+<p>​	美国和美国人的繁荣超过了那些战争摧毁了他们经济的欧洲和亚洲人的梦想。</p>
+<h3 id="Paragraph2-3"><a href="#Paragraph2-3" class="headerlink" title="Paragraph2"></a>Paragraph2</h3><p>① It was inevitable that this primacy should have narrowed as other countries grew richer. </p>
+<p>​	这种优势的缩小是不可避免的</p>
+<p> ② Just as inevitably, the retreat from predominance proved painful. </p>
+<p>​	同样不可避免的是，优势地位的退却是痛苦的</p>
+<p>③ By the mid-1980s Americans had found themselves at a loss over their fading industrial competitiveness. </p>
+<p>​	到了20世纪80年代中期，美国人发现他们在日益减弱的工业竞争力面前感到迷茫</p>
+<p>④ Some huge American industries, such as consumer electronics, had shrunk or vanished in the face of foreign competition. </p>
+<p>​	 一些庞大的美国行业，如消费电子行业，在外国竞争面前已经缩小或消失</p>
+<p>⑤ By 1987 there was only one American television maker left, Zenith. (Now there is none: Zenith was bought by South Korea’ s LG Electronics in July.)</p>
+<p>​	到1987年，美国只剩下一家电视制造商——Zenith。（现在已经没有了：Zenith在2000年7月被韩国的LG电子收购。）</p>
+<p>⑥ Foreign-made cars and textiles were sweeping into the domestic market. </p>
+<p>​	外国制造的汽车和纺织品正在涌入国内市场</p>
+<p>⑦ America’s machine-tool industry was on the ropes. </p>
+<p>​	美国的机床行业陷入困境</p>
+<p>⑧ For a while it looked as though the making of semiconductors, which America had invented and which sat at the heart of the new computer age, was going to be the next casualty.</p>
+<p>​	一度看起来，美国发明并处于新的计算机时代核心的半导体制造业也将成为下一个受害者</p>
+<h3 id="Paragraph3-3"><a href="#Paragraph3-3" class="headerlink" title="Paragraph3"></a>Paragraph3</h3><p>① All of this caused a crisis of confidence. </p>
+<p>​	所有这些导致了信心危机</p>
+<p>② Americans stopped taking prosperity for granted. </p>
+<p>​	美国人不再把繁荣视为理所当然</p>
+<p>③ They began to believe that their way of doing business was failing, and that their incomes would therefore shortly begin to fall as well. </p>
+<p>​	 他们开始相信他们的商业方式正在失败，因此他们的收入也将很快开始下降。</p>
+<p>④ The mid-1980s brought one inquiry after another into the causes of America’s industrial decline. </p>
+<p>​	20世纪80年代中期，对美国工业衰落原因的调查接踵而至</p>
+<p>⑤ Their sometimes sensational findings were filled with warnings about the growing competition from overseas.</p>
+<p>​	他们有时会带来轰动性的发现，充满了对来自海外竞争的警告</p>
+<h3 id="Paragraph4-3"><a href="#Paragraph4-3" class="headerlink" title="Paragraph4"></a>Paragraph4</h3><p>① How things have changed! </p>
+<p>​	情况变化了！</p>
+<p>② In 1995 the United States can look back on five years of solid growth while Japan has been struggling. </p>
+<p>​	在1995年，美国回顾过去五年的坚实增长，而日本一直在苦苦挣扎</p>
+<p>③ Few Americans attribute this solely to such obvious causes as a devalued dollar or the turning of the business cycle. </p>
+<p>​	很少有美国人把这完全归因于明显的原因，如货币贬值或商业周期的转折</p>
+<p>④ Self-doubt has yielded to blind pride. </p>
+<p>​	自我怀疑已经让位于盲目的自豪</p>
+<p>⑤ “American industry has changed its structure, has gone on a diet, has learnt to be more quick-witted,” according to Richard Cavanagh, executive dean of Harvard’s Kennedy School of Government.</p>
+<p>​	“美国工业已经改变了结构，进行了减肥，学会了更加机智应对，” 哈佛大学肯尼迪政府学院的执行院长理查德·卡瓦纳说道。</p>
+<p>⑥ “It makes me proud to be an American just to see how our businesses are improving their productivity,” says Stephen Moore of the Cato Institute, a think-tank in Washington, DC. </p>
+<p>​	华盛顿特区智库卡托研究所的斯蒂芬·摩尔表示：“看到我们的企业如何提高生产率，我为自己是美国人感到自豪。”</p>
+<p>⑦ And William Sahlman of the Harvard Business School believes that people will look back on this period as “a golden age of business management in the United States.”</p>
+<p>​	哈佛商学院的威廉·萨尔曼认为，人们将会回顾这个时期，视其为“美国商业管理的黄金时代”</p>
+<h3 id="Question-3"><a href="#Question-3" class="headerlink" title="Question"></a>Question</h3><ol>
+<li>The US achieved its predominance after World War II because ____.</li>
+</ol>
+<p>​		A. It had made painstaking efforts towards this goal</p>
+<p>​		B. Its domestic market was eight times larger than before</p>
+<p>​		C. The war had destroyed the economies of most potential competitors</p>
+<p>​		D. The unparalleled size of its workforce had given an impetus to its economy</p>
+<ol start="2">
+<li>The loss of US predominance in the world economy in the 1980s is manifested in the fact that the American _____.</li>
+</ol>
+<p>​		A. TV industry had withdrawn to its domestic market.</p>
+<p>​		B. Semiconductor industry had been taken over by foreign enterprises.</p>
+<p>​		C. Machine-tool industry had collapsed after suicidal actions.</p>
+<p>​		D. Auto industry had lost part of its domestic market.</p>
+<ol start="3">
+<li>What can be inferred from the passage?</li>
+</ol>
+<p>​		A. It is human nature to shift between self-doubt and blind pride.</p>
+<p>​		B. Intense competition may contribute to economic progress.</p>
+<p>​		C. The revival of the economy depends on international cooperation.</p>
+<p>​		D. A long history of success may pave the way for further development.</p>
+<ol start="4">
+<li>The author seems to believe that the revival of the US economy in the 1990s can be attributed to the _____.</li>
+</ol>
+<p>​		A. Turning of the business cycle</p>
+<p>​		B. Restructuring of industry</p>
+<p>​		C. Improved business management</p>
+<p>​		D. Success in education</p>
 ]]></content>
+      <categories>
+        <category>考研英语</category>
+      </categories>
+      <tags>
+        <tag>英语</tag>
+      </tags>
   </entry>
   <entry>
     <title>C语言</title>
@@ -2627,89 +2918,21 @@
       </tags>
   </entry>
   <entry>
-    <title>英语翻译练习</title>
-    <url>/posts/1429.html</url>
-    <content><![CDATA[<p>英语翻译练习，加强阅读能力，每日必备！！</p>
-<span id="more"></span>
+    <title>Hello World</title>
+    <url>/posts/3eeb.html</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="Passage-1"><a href="#Passage-1" class="headerlink" title="Passage 1"></a><strong>Passage 1</strong></h2><p><strong>2001.Text.3</strong></p>
-<h3 id="Frist-paragraph"><a href="#Frist-paragraph" class="headerlink" title="Frist paragraph"></a>Frist paragraph</h3><p>① Why do so many Americans distrust what they read in their newspapers? </p>
-<p>​	为什么很多美国人不相信他们在他们的报纸里读到的东西</p>
-<p>② The American Society of Newspaper Editors is trying to answer this painful question. </p>
-<p>​	美国报纸编辑协会正试图回答这个痛苦的问题</p>
-<p>③ The organization is deep into a long self-analysis known as the journalism credibility project.</p>
-<p>​	该组织正深入(deep into)长期的自我分析称为(known as)新闻可信度（credobility）项目</p>
-<h3 id="Second-paragraph"><a href="#Second-paragraph" class="headerlink" title="Second paragraph"></a>Second paragraph</h3><p>① <strong>Sad to say</strong>, this project has turned out to be mostly low-level findings about factual errors and spelling and grammar mistakes, combined with lots of head scratching puzzlement about what in the world those readers really want.</p>
-<p>​	遗憾的是，这次项目的结果证明（turned out）很大程度上是(is mostly)低级的发现关于事实错误和拼写与语法上的错误，还有一些令人头痛(head scratching)的问题关于这些读者真正想要的究竟（in the world）是什么。</p>
-<p>② <strong>But</strong> the sources of distrust go way deeper. </p>
-<p>​	但是这种不信任的源头走得更深（go way deeper）</p>
-<p>③ Most journalists learn to see the world through a set of standard templates (patterns) <strong>into which</strong> they plug each day’s events.</p>
-<p>​	大多数记者学着去看待这个世界通过一套的标准模板，模板被他们插入每天发生的事。</p>
-<p>​	“<strong>into which</strong>“是连接两个句子或从句的关系代词,<strong>表示前面的句子中的某物进入或转换成后面的句子所述的状态或形式</strong>。</p>
-<p>​	例如: This is a crisis into which we never dreamed we would enter.</p>
-<p>​	表示: “我们从未梦想我们会陷入这种危机之中”。</p>
-<p>​	又如: His anger changed into a calmness into which I couldn’t penetrate.<br>​    表示: “他的愤怒转变成一种宁静,这种宁静我无法理解。”</p>
-<p>​	本句话还可以翻译为：大多数记者学会通过一套标准模板(模式)来观察世界，他们把每天发生的事情都塞进去（这种模式）。</p>
-<p>④ In other words, there is a conventional story line in the newsroom culture that provides a backbone and a ready-made narrative structure for otherwise confusing news.</p>
-<p>​	换言之，在新闻采编室文化中有一个传统的&#x2F;约定成俗的（conventional）写作模式（story line），为原本（otherwise）复杂的新闻提供一个主干框架和一个现成的叙述(narrative)结构。</p>
-<h3 id="Third-paragraph"><a href="#Third-paragraph" class="headerlink" title="Third paragraph"></a>Third paragraph</h3><p>① There exists a social and cultural disconnect between journalists and their readers, which helps explain why the “standard templates” of the newsroom seem alien to many readers. </p>
-<p>​	在作者和读者之间存在一个社会和文化的断联，这有助于解释为什么对大多数读者而言新闻采编室的标准模板看起来是陌生的（alien）</p>
-<p>② In a recent survey, questionnaires were sent to reporters in five middle-size cities around the country, plus one large metropolitan area.</p>
-<p>​	在最近的调查里，问卷被送到了全国5座中等都市，加上（及）一座大都市(metropolitan)的记者手中。</p>
-<p>③ Then residents in these communities were phoned at random and asked the same questions.</p>
-<p>​	然后这些城市的居民被随机打电话并且被问相同的问题。</p>
-<p>​	</p>
-<h3 id="Fourth-paragraph"><a href="#Fourth-paragraph" class="headerlink" title="Fourth paragraph"></a>Fourth paragraph</h3><p>① Replies show that compared with other Americans, journalists are more likely to live in upscale neighborhoods, have maids, own Mercedeses, and trade stocks, and they’re less likely to go to church, do volunteer work, or put down roots in a community.</p>
-<p>​	结果表明：相比与其他美国人，新闻记者更可能住在大规模社区，有女仆，有奔驰，有股票，并且他们很少可能去教堂，做志愿者工作，或者扎根社区。</p>
-<h3 id="Fifth-paragraph"><a href="#Fifth-paragraph" class="headerlink" title="Fifth paragraph"></a>Fifth paragraph</h3><p>① Reporters <strong>tend to</strong> be part of a broadly defined social and cultural elite, so their work tends to reflect the conventional values of this elite. </p>
-<p> 记者往往（tend to）被广泛地定义为是社会文化精英的一个部分，因此他们的工作往往反映了这些精英传统的价值观</p>
-<p>② The astonishing distrust of the news media isn’t <strong>rooted</strong> in inaccuracy or poor reportorial skills <strong>but</strong> in the daily clash of world views between reporters and their readers.</p>
-<p>​	新闻媒体造成的令人惊讶的不信任根本（root）不是（并非）不准确或者贫瘠的报道技巧而是在日常中作者和他们读者间不同世界观的碰撞。</p>
-<h3 id="Sixth-paragraph"><a href="#Sixth-paragraph" class="headerlink" title="Sixth paragraph"></a>Sixth paragraph</h3><p>① This is an explosive situation for any industry, particularly a declining one.</p>
-<p>​	这是一个爆炸性(explosive)的情况对任何一个行业，尤其是走下坡路的行业。</p>
-<p>② Here is a troubled business that keeps hiring employees whose attitudes vastly annoy the customers. </p>
-<p>​	这是一个困难的行业：雇佣者雇佣员工的态度非常惹怒顾客</p>
-<p>③ Then it sponsors lots of symposiums and a credibility project dedicated to wondering why customers are annoyed and fleeing in large numbers. </p>
-<p>​	因此美国报纸编辑协会赞助了许多研讨会和可信度调查项目专注于搞明白为什么顾客们烦恼并且逃避新闻。</p>
-<p>④ But it never seems to <strong>get around to</strong> noticing the cultural and class biases that so many former buyers are complaining about. </p>
-<p>​	但是它似乎从来没有抽空(get aroud to)注意到哪些许多先前的购买者抱怨的文化和阶级偏见。</p>
-<p>⑤ If it did, it would <strong>open up</strong> its diversity program, now focused narrowly on race and gender, and look for reporters who differ broadly by outlook, values, education, and class.</p>
-<p>​	如果它注意到了，它就应该展开（open up）它的多样化项目（目前狭隘地专注于种族和性别）并且寻找在态度，价值观，教育和阶级有很大不同的记者。</p>
-<ol>
-<li>The results of the journalism credibility project turned out ____.</li>
-</ol>
-<p>​		A. Quite trustworthy.（相当值得信赖）</p>
-<p>​		B. Somewhat contradictory.（有些矛盾）</p>
-<p>​		C. Very illustrating.（非常清晰的）</p>
-<p>​		D. Rather superficial.（非常肤浅）</p>
-<ol start="2">
-<li>The basic problem of journalists as pointed out by the writer lies in their ____.</li>
-</ol>
-<p>​		A. Working attitude.（工作态度）</p>
-<p>​		B. Conventional lifestyle.（传统的生活方式）</p>
-<p>​		C. World outlook.（时间观）</p>
-<p>​		D. Educational background.（教育背景）</p>
-<ol start="3">
-<li>Despite its efforts, the newspaper industry still cannot satisfy the readers owing to its ____.</li>
-</ol>
-<p>​		A. Failure to realize its real problem.（没能意识到真正的问题）</p>
-<p>​		B. Tendency to hire annoying reporters.（倾向雇佣令人恼怒的记者）</p>
-<p>​		C. Likeliness to do inaccurate reporting.（做不准确的报告的可能性）</p>
-<p>​		D. Prejudice in matters of race and gender.（种族和性别问题上的偏见）</p>
-<ol start="4">
-<li>What is the passage mainly about?</li>
-</ol>
-<p>​		A. Needs of the readers all over the world.（全世界读者的需求）</p>
-<p>​		B. Causes of the public disappointment about newspaper.（大众不满意新闻报纸的原因）</p>
-<p>​		C. Origins of the declining newspaper industry.（报纸行业衰退的起因）</p>
-<p>​		D. Aims of a journalism credibility project.（新闻可信度项目的目的）</p>
-<p>答案：D，C，A，B</p>
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
-      <categories>
-        <category>考研英语</category>
-      </categories>
-      <tags>
-        <tag>英语</tag>
-      </tags>
   </entry>
 </search>
