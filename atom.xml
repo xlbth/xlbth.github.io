@@ -6,7 +6,7 @@
   <link href="https://xlbth.github.io/atom.xml" rel="self"/>
   
   <link href="https://xlbth.github.io/"/>
-  <updated>2023-05-19T16:12:24.715Z</updated>
+  <updated>2023-05-21T07:52:34.200Z</updated>
   <id>https://xlbth.github.io/</id>
   
   <author>
@@ -15,6 +15,98 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>TypeScript</title>
+    <link href="https://xlbth.github.io/posts/cc59.html"/>
+    <id>https://xlbth.github.io/posts/cc59.html</id>
+    <published>2023-05-21T06:44:11.000Z</published>
+    <updated>2023-05-21T07:52:34.200Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;学习计划&quot;&gt;&lt;a href=&quot;#学习计划&quot; class=&quot;headerlink&quot; title=&quot;学习计划&quot;&gt;&lt;/a&gt;学习计划&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;阶段 1：入门&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;了解TypeScript的基本概念和语法&lt;/li&gt;
+&lt;li&gt;学习如何声明变量、函数和类&lt;/li&gt;
+&lt;li&gt;理解静态类型和类型注解的概念&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;阶段 2：类型系统&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;深入了解TypeScript的类型系统，包括原始类型、数组、元组、枚举等&lt;/li&gt;
+&lt;li&gt;学习如何定义和使用接口和类型别名&lt;/li&gt;
+&lt;li&gt;探索泛型的概念和用法&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;阶段 3：高级特性&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;学习TypeScript中的模块化和命名空间&lt;/li&gt;
+&lt;li&gt;理解装饰器的作用和使用方式&lt;/li&gt;
+&lt;li&gt;探索异步编程和Promise、async&amp;#x2F;await等特性&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;阶段 4：与JavaScript的互操作性&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;学习如何使用TypeScript与现有的JavaScript库和框架进行交互&lt;/li&gt;
+&lt;li&gt;理解类型声明文件和如何使用它们扩展JavaScript库的类型信息&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;阶段 5：实际应用&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;探索如何在实际项目中使用TypeScript&lt;/li&gt;
+&lt;li&gt;学习调试和构建TypeScript应用程序的技巧&lt;/li&gt;
+&lt;li&gt;了解TypeScript在大型项目和团队中的最佳实践&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    <category term="前端" scheme="https://xlbth.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+    <category term="TS" scheme="https://xlbth.github.io/tags/TS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>学习Vue 3</title>
+    <link href="https://xlbth.github.io/posts/ca26.html"/>
+    <id>https://xlbth.github.io/posts/ca26.html</id>
+    <published>2023-05-20T16:05:44.000Z</published>
+    <updated>2023-05-20T20:11:01.969Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;strong&gt;课程计划：Vue 3&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;模块 1: Vue 3基础&lt;ul&gt;
+&lt;li&gt;介绍Vue 3和其核心概念&lt;/li&gt;
+&lt;li&gt;学习如何创建和注册Vue组件&lt;/li&gt;
+&lt;li&gt;探索Vue指令和生命周期钩子函数&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;模块 2: Vue 3的响应式系统和数据处理&lt;ul&gt;
+&lt;li&gt;理解Vue 3的响应式数据和计算属性&lt;/li&gt;
+&lt;li&gt;学习如何处理表单输入和事件处理&lt;/li&gt;
+&lt;li&gt;探索Vue 3中的条件渲染和列表渲染&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;模块 3: Vue 3高级特性&lt;ul&gt;
+&lt;li&gt;深入了解Vue 3的组合式API（Composition API）&lt;/li&gt;
+&lt;li&gt;学习如何使用Vue Router实现路由功能&lt;/li&gt;
+&lt;li&gt;探索状态管理和使用Vuex&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;模块 4: Vue 3性能优化和最佳实践&lt;ul&gt;
+&lt;li&gt;学习Vue 3中的性能优化技巧和最佳实践&lt;/li&gt;
+&lt;li&gt;探讨Vue 3常见问题解决方法&lt;/li&gt;
+&lt;li&gt;最后的项目实践和总结&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;</summary>
+    
+    
+    
+    <category term="前端" scheme="https://xlbth.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+    <category term="Vue3" scheme="https://xlbth.github.io/tags/Vue3/"/>
+    
+  </entry>
   
   <entry>
     <title>英语翻译练习</title>
@@ -60,27 +152,6 @@
     
     
     <category term="编程语言" scheme="https://xlbth.github.io/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="https://xlbth.github.io/posts/3eeb.html"/>
-    <id>https://xlbth.github.io/posts/3eeb.html</id>
-    <published>2023-05-16T12:27:39.633Z</published>
-    <updated>2023-05-16T18:16:45.453Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt;</summary>
-        
-      
-    
-    
-    
     
   </entry>
   

@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png">
+  <link rel="mask-icon" href="/images/favicon.png" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"xlbth.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="学习计划阶段 1：入门  了解TypeScript的基本概念和语法 学习如何声明变量、函数和类 理解静态类型和类型注解的概念  阶段 2：类型系统  深入了解TypeScript的类型系统，包括原始类型、数组、元组、枚举等 学习如何定义和使用接口和类型别名 探索泛型的概念和用法  阶段 3：高级特性  学习TypeScript中的模块化和命名空间 理解装饰器的作用和使用方式 探索异步编程和Prom">
+<meta property="og:type" content="article">
+<meta property="og:title" content="TypeScript">
+<meta property="og:url" content="https://xlbth.github.io/posts/cc59.html">
+<meta property="og:site_name" content="思想不会滑坡的小狼">
+<meta property="og:description" content="学习计划阶段 1：入门  了解TypeScript的基本概念和语法 学习如何声明变量、函数和类 理解静态类型和类型注解的概念  阶段 2：类型系统  深入了解TypeScript的类型系统，包括原始类型、数组、元组、枚举等 学习如何定义和使用接口和类型别名 探索泛型的概念和用法  阶段 3：高级特性  学习TypeScript中的模块化和命名空间 理解装饰器的作用和使用方式 探索异步编程和Prom">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-05-21T06:44:11.000Z">
+<meta property="article:modified_time" content="2023-05-21T07:52:34.200Z">
+<meta property="article:author" content="Robert Joe">
+<meta property="article:tag" content="TS">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://xlbth.github.io/posts/cc59.html">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>TypeScript | 思想不会滑坡的小狼</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="思想不会滑坡的小狼" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">思想不会滑坡的小狼</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">学习分享博客</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://xlbth.github.io/posts/cc59.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Robert Joe">
+      <meta itemprop="description" content="一个生动有趣记录学习的博客网站，涉及前后端开发，数据结构，操作系统等计算机相关知识，考研408分享，AI工具分享">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="思想不会滑坡的小狼">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          TypeScript
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2023-05-21 14:44:11 / 修改时间：15:52:34" itemprop="dateCreated datePublished" datetime="2023-05-21T14:44:11+08:00">2023-05-21</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">前端</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>17k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>15 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="学习计划"><a href="#学习计划" class="headerlink" title="学习计划"></a>学习计划</h1><p><strong>阶段 1：入门</strong></p>
+<ul>
+<li>了解TypeScript的基本概念和语法</li>
+<li>学习如何声明变量、函数和类</li>
+<li>理解静态类型和类型注解的概念</li>
+</ul>
+<p><strong>阶段 2：类型系统</strong></p>
+<ul>
+<li>深入了解TypeScript的类型系统，包括原始类型、数组、元组、枚举等</li>
+<li>学习如何定义和使用接口和类型别名</li>
+<li>探索泛型的概念和用法</li>
+</ul>
+<p><strong>阶段 3：高级特性</strong></p>
+<ul>
+<li>学习TypeScript中的模块化和命名空间</li>
+<li>理解装饰器的作用和使用方式</li>
+<li>探索异步编程和Promise、async&#x2F;await等特性</li>
+</ul>
+<p><strong>阶段 4：与JavaScript的互操作性</strong></p>
+<ul>
+<li>学习如何使用TypeScript与现有的JavaScript库和框架进行交互</li>
+<li>理解类型声明文件和如何使用它们扩展JavaScript库的类型信息</li>
+</ul>
+<p><strong>阶段 5：实际应用</strong></p>
+<ul>
+<li>探索如何在实际项目中使用TypeScript</li>
+<li>学习调试和构建TypeScript应用程序的技巧</li>
+<li>了解TypeScript在大型项目和团队中的最佳实践</li>
+</ul>
+<span id="more"></span>
+
+<h1 id="入门"><a href="#入门" class="headerlink" title="入门"></a>入门</h1><h2 id="一、TypeScript的基本概念和语法"><a href="#一、TypeScript的基本概念和语法" class="headerlink" title="一、TypeScript的基本概念和语法"></a>一、TypeScript的基本概念和语法</h2><p>以下是一些重要的概念和语法要点：</p>
+<h3 id="1-静态类型"><a href="#1-静态类型" class="headerlink" title="1.静态类型"></a>1.静态类型</h3><p>TypeScript是一种静态类型的语言，它允许您在编写代码时指定变量的类型。通过类型注解，您可以告诉编译器变量的类型，从而在编码阶段捕获潜在的错误。</p>
+<h3 id="2-类型注解"><a href="#2-类型注解" class="headerlink" title="2.类型注解"></a>2.类型注解</h3><p>类型注解是指在变量或函数声明时使用冒号（:）指定类型。例如：</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> <span class="attr">age</span>: <span class="built_in">number</span> = <span class="number">25</span>;</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">add</span>(<span class="params">a: <span class="built_in">number</span>, b: <span class="built_in">number</span></span>): <span class="built_in">number</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> a + b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在上述示例中，<code>age</code>变量的类型被注解为<code>number</code>，<code>add</code>函数的参数和返回值的类型也被注解为<code>number</code>。</p>
+<h3 id="3-接口（Interfaces）"><a href="#3-接口（Interfaces）" class="headerlink" title="3.接口（Interfaces）"></a>3.接口（Interfaces）</h3><p>接口是TypeScript中用于描述对象结构的方式。您可以使用接口定义对象的属性和方法，以及它们的类型。例如：</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> <span class="title class_">Person</span> &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="built_in">string</span>;</span><br><span class="line">  <span class="attr">age</span>: <span class="built_in">number</span>;</span><br><span class="line">  <span class="title function_">greet</span>(): <span class="built_in">void</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>上述接口<code>Person</code>定义了一个具有<code>name</code>和<code>age</code>属性以及一个<code>greet</code>方法的对象。</p>
+<h3 id="4-类（Classes）"><a href="#4-类（Classes）" class="headerlink" title="4.类（Classes）"></a>4.类（Classes）</h3><p>类是面向对象编程的核心概念之一。您可以使用类来创建具有属性和方法的对象。以下是一个简单的类的示例：</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Greeter</span> &#123;</span><br><span class="line">  <span class="attr">greeting</span>: <span class="built_in">string</span>;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">constructor</span>(<span class="params">message: <span class="built_in">string</span></span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">greeting</span> = message;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">greet</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;Hello, &quot;</span> + <span class="variable language_">this</span>.<span class="property">greeting</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> greeter = <span class="keyword">new</span> <span class="title class_">Greeter</span>(<span class="string">&quot;world&quot;</span>);</span><br><span class="line">greeter.<span class="title function_">greet</span>();</span><br></pre></td></tr></table></figure>
+
+<p>上述代码中，<code>Greeter</code>类具有一个<code>greeting</code>属性和一个<code>greet</code>方法。通过<code>new</code>关键字创建一个类的实例，并调用该实例的<code>greet</code>方法。</p>
+<h3 id="5-枚举（Enums）"><a href="#5-枚举（Enums）" class="headerlink" title="5.枚举（Enums）"></a>5.枚举（Enums）</h3><p>枚举允许您定义一组命名的常量。使用枚举可以提高代码的可读性和可维护性。例如：</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">enum</span> <span class="title class_">Color</span> &#123;</span><br><span class="line">  <span class="title class_">Red</span>,</span><br><span class="line">  <span class="title class_">Green</span>,</span><br><span class="line">  <span class="title class_">Blue</span>,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> <span class="attr">myColor</span>: <span class="title class_">Color</span> = <span class="title class_">Color</span>.<span class="property">Green</span>;</span><br></pre></td></tr></table></figure>
+
+<p>在上述示例中，<code>Color</code>是一个枚举，包含了<code>Red</code>、<code>Green</code>和<code>Blue</code>三个常量。通过赋值给<code>myColor</code>变量，可以使用枚举中定义的常量。</p>
+<h3 id="6-泛型（Generics）"><a href="#6-泛型（Generics）" class="headerlink" title="6.泛型（Generics）"></a>6.泛型（Generics）</h3><p>泛型允许您编写可以在多种类型上工作的可重用代码。通过使用泛型，您可以在编写函数、类和接口时增加类型的灵活性和安全性。例如：</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> identity&lt;T&gt;(<span class="attr">arg</span>: T): T &#123;</span><br><span class="line">  <span class="keyword">return</span> arg;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> result = identity&lt;<span class="built_in">string</span>&gt;(<span class="string">&quot;Hello&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<p>在上述示例中，<code>identity</code>函数使用泛型类型参数<code>T</code>，它接收一个参数并返回相同类型的值。通过显式指定类型参数为<code>string</code>，我们可以将函数应用于特定类型的值。</p>
+<h3 id="7-模块化（Modules）"><a href="#7-模块化（Modules）" class="headerlink" title="7.模块化（Modules）"></a>7.模块化（Modules）</h3><p>TypeScript支持模块化的开发方式，允许您将代码分割成多个模块，并通过导入和导出语法在模块之间共享代码。这样可以提高代码的可维护性和复用性。例如：</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// math.ts 模块</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">function</span> <span class="title function_">add</span>(<span class="params">a: <span class="built_in">number</span>, b: <span class="built_in">number</span></span>): <span class="built_in">number</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> a + b;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// main.ts 模块</span></span><br><span class="line"><span class="keyword">import</span> &#123; add &#125; <span class="keyword">from</span> <span class="string">&quot;./math&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> result = <span class="title function_">add</span>(<span class="number">2</span>, <span class="number">3</span>);</span><br></pre></td></tr></table></figure>
+
+<p>在上述示例中，<code>math.ts</code>模块导出了一个<code>add</code>函数，<code>main.ts</code>模块使用<code>import</code>语句导入了<code>add</code>函数，并在代码中调用它。</p>
+<p>这些是TypeScript的一些其他功能的简要介绍。TypeScript还提供了许多其他功能，如装饰器（Decorators）、异步编程支持、命名空间（Namespaces）等，可以根据您的需求进行更深入的学习和应用。</p>
+<p>如果您对特定功能有进一步的疑问或需要更详细的解释，请随时提问！我将很乐意帮助您。</p>
+<h2 id="二、学习如何声明变量、函数和类"><a href="#二、学习如何声明变量、函数和类" class="headerlink" title="二、学习如何声明变量、函数和类"></a>二、学习如何声明变量、函数和类</h2><p>在TypeScript中，您可以使用以下语法来声明变量、函数和类：</p>
+<h3 id="1-变量声明"><a href="#1-变量声明" class="headerlink" title="1.变量声明"></a>1.变量声明</h3><p>使用关键字<code>let</code>或<code>const</code>可以声明变量，并使用冒号（:）指定变量的类型。例如：</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> <span class="attr">name</span>: <span class="built_in">string</span> = <span class="string">&quot;John&quot;</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="attr">age</span>: <span class="built_in">number</span> = <span class="number">25</span>;</span><br></pre></td></tr></table></figure>
+
+<p>在上述示例中，<code>name</code>变量的类型被声明为<code>string</code>，<code>age</code>变量的类型被声明为<code>number</code>。</p>
+<h3 id="2-函数声明"><a href="#2-函数声明" class="headerlink" title="2.函数声明"></a>2.函数声明</h3><p>使用关键字<code>function</code>可以声明函数，并使用冒号（:）指定参数的类型和返回值的类型。例如：</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">add</span>(<span class="params">a: <span class="built_in">number</span>, b: <span class="built_in">number</span></span>): <span class="built_in">number</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> a + b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在上述示例中，<code>add</code>函数接受两个参数，类型为<code>number</code>，并返回一个<code>number</code>类型的值。</p>
+<h3 id="3-类声明"><a href="#3-类声明" class="headerlink" title="3.类声明"></a>3.类声明</h3><p>使用关键字<code>class</code>可以声明类，并使用冒号（:）指定类的类型。例如：</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Person</span> &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="built_in">string</span>;</span><br><span class="line">  <span class="attr">age</span>: <span class="built_in">number</span>;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">constructor</span>(<span class="params">name: <span class="built_in">string</span>, age: <span class="built_in">number</span></span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">name</span> = name;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">age</span> = age;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">greet</span>(): <span class="built_in">void</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`Hello, my name is <span class="subst">$&#123;<span class="variable language_">this</span>.name&#125;</span> and I&#x27;m <span class="subst">$&#123;<span class="variable language_">this</span>.age&#125;</span> years old.`</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在上述示例中，<code>Person</code>类具有<code>name</code>和<code>age</code>属性，以及一个<code>greet</code>方法</p>
+<p>这些是声明变量、函数和类的基本语法。在TypeScript中，通过明确指定类型，可以提供更好的代码安全性和可读性。</p>
+<p>请注意，在TypeScript中，还可以使用类型推断来自动推断变量和函数的类型，如果没有显式指定类型，编译器会根据赋值和上下文推断类型。</p>
+<h2 id="三、理解静态类型和类型注解的概念"><a href="#三、理解静态类型和类型注解的概念" class="headerlink" title="三、理解静态类型和类型注解的概念"></a>三、理解静态类型和类型注解的概念</h2><p>静态类型和类型注解是TypeScript中重要的概念，它们有助于增强代码的可靠性和可维护性。</p>
+<h3 id="1-静态类型（Static-Typing）"><a href="#1-静态类型（Static-Typing）" class="headerlink" title="1.静态类型（Static Typing）"></a>1.静态类型（Static Typing）</h3><p>静态类型是指在编译时确定变量、函数和类的类型，并进行类型检查的特性。在静态类型语言中，类型在编译阶段就被确定，并且变量在声明时必须指定其类型。在TypeScript中，静态类型可以提前捕获一些潜在的错误，例如类型不匹配、未定义的变量等，从而减少在运行时出现的错误。</p>
+<p>例如，在TypeScript中声明一个变量时，可以显式指定其类型：</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> <span class="attr">name</span>: <span class="built_in">string</span> = <span class="string">&quot;John&quot;</span>;</span><br><span class="line"><span class="keyword">let</span> <span class="attr">age</span>: <span class="built_in">number</span> = <span class="number">25</span>;</span><br></pre></td></tr></table></figure>
+
+<p>在上述示例中，<code>name</code>变量的类型被声明为<code>string</code>，<code>age</code>变量的类型被声明为<code>number</code>，这样在编译时就会进行类型检查，确保变量的使用符合其声明的类型。</p>
+<h3 id="2-类型注解（Type-Annotations）"><a href="#2-类型注解（Type-Annotations）" class="headerlink" title="2.类型注解（Type Annotations）"></a>2.类型注解（Type Annotations）</h3><p>类型注解是在变量、函数参数、函数返回值等地方显式地注明类型信息的语法。通过类型注解，开发人员可以明确指定变量、函数的参数和返回值的类型，使代码更加清晰和可读。</p>
+<p>例如，在函数声明中使用类型注解：</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">add</span>(<span class="params">a: <span class="built_in">number</span>, b: <span class="built_in">number</span></span>): <span class="built_in">number</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> a + b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在上述示例中，<code>add</code>函数的参数<code>a</code>和<code>b</code>都被注解为<code>number</code>类型，返回值也被注解为<code>number</code>类型。</p>
+<p>类型注解的好处是可以提供更好的代码提示和类型检查，使开发人员能够更早地发现潜在的错误。</p>
+<p>总结：<br>静态类型和类型注解是TypeScript中的关键概念。静态类型带来了更强的类型安全性和可靠性，而类型注解则是显式地注明变量、函数参数和返回值的类型信息，增强了代码的可读性和可维护性。</p>
+<h1 id="类型系统"><a href="#类型系统" class="headerlink" title="类型系统"></a>类型系统</h1><h2 id="一、深入了解TypeScript的类型系统，包括原始类型、数组、元组、枚举等"><a href="#一、深入了解TypeScript的类型系统，包括原始类型、数组、元组、枚举等" class="headerlink" title="一、深入了解TypeScript的类型系统，包括原始类型、数组、元组、枚举等"></a>一、深入了解TypeScript的类型系统，包括原始类型、数组、元组、枚举等</h2><p>TypeScript的类型系统非常丰富，支持许多不同类型的数据。以下是一些常见的类型及其用法：</p>
+<h3 id="1-原始类型（Primitive-Types）"><a href="#1-原始类型（Primitive-Types）" class="headerlink" title="1.原始类型（Primitive Types）"></a>1.原始类型（Primitive Types）</h3><ul>
+<li><code>number</code>：表示数值类型，包括整数和浮点数。</li>
+<li><code>string</code>：表示字符串类型，用单引号或双引号括起来的字符序列。</li>
+<li><code>boolean</code>：表示布尔类型，即<code>true</code>或<code>false</code>。</li>
+<li><code>null</code>：表示空值或空引用。</li>
+<li><code>undefined</code>：表示未定义的值。</li>
+<li><code>symbol</code>：表示唯一的、不可变的值。</li>
+</ul>
+<h3 id="2-数组（Arrays）"><a href="#2-数组（Arrays）" class="headerlink" title="2.数组（Arrays）"></a>2.数组（Arrays）</h3><p>使用数组类型可以定义包含特定类型元素的数组。例如：</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> <span class="attr">numbers</span>: <span class="built_in">number</span>[] = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>];</span><br><span class="line"><span class="keyword">let</span> <span class="attr">names</span>: <span class="built_in">string</span>[] = [<span class="string">&#x27;Alice&#x27;</span>, <span class="string">&#x27;Bob&#x27;</span>, <span class="string">&#x27;Charlie&#x27;</span>];</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-元组（Tuples）"><a href="#3-元组（Tuples）" class="headerlink" title="3.元组（Tuples）"></a>3.元组（Tuples）</h3><p>元组是表示具有固定数量和类型的元素的数组。例如：</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> <span class="attr">person</span>: [<span class="built_in">string</span>, <span class="built_in">number</span>] = [<span class="string">&#x27;John&#x27;</span>, <span class="number">25</span>];</span><br></pre></td></tr></table></figure>
+
+<p>在上述示例中，<code>person</code>是一个包含两个元素的元组，第一个元素是字符串类型，第二个元素是数值类型。</p>
+<h3 id="4-枚举（Enums）"><a href="#4-枚举（Enums）" class="headerlink" title="4.枚举（Enums）"></a>4.枚举（Enums）</h3><p>枚举用于定义一组具名的常量。例如：</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">enum</span> <span class="title class_">Color</span> &#123;</span><br><span class="line">  <span class="title class_">Red</span>,</span><br><span class="line">  <span class="title class_">Green</span>,</span><br><span class="line">  <span class="title class_">Blue</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> <span class="attr">favoriteColor</span>: <span class="title class_">Color</span> = <span class="title class_">Color</span>.<span class="property">Blue</span>;</span><br></pre></td></tr></table></figure>
+
+<p>在上述示例中，<code>Color</code>是一个枚举类型，它定义了<code>Red</code>、<code>Green</code>和<code>Blue</code>三个常量。<code>favoriteColor</code>变量被赋值为<code>Color.Blue</code>，表示它的喜好颜色是蓝色。</p>
+<h2 id="二、学习如何定义和使用接口和类型别名"><a href="#二、学习如何定义和使用接口和类型别名" class="headerlink" title="二、学习如何定义和使用接口和类型别名"></a>二、学习如何定义和使用接口和类型别名</h2><p>在TypeScript中，接口（Interfaces）和类型别名（Type Aliases）是用于定义自定义类型的重要工具。</p>
+<h3 id="1-接口（Interfaces）"><a href="#1-接口（Interfaces）" class="headerlink" title="1.接口（Interfaces）"></a>1.接口（Interfaces）</h3><p>接口用于定义对象的结构和属性。通过接口，可以指定对象应具有哪些属性和方法，并且可以定义它们的类型。例如：</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> <span class="title class_">Person</span> &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="built_in">string</span>;</span><br><span class="line">  <span class="attr">age</span>: <span class="built_in">number</span>;</span><br><span class="line">  <span class="attr">sayHello</span>: <span class="function">() =&gt;</span> <span class="built_in">void</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> <span class="attr">person</span>: <span class="title class_">Person</span> = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;John&#x27;</span>,</span><br><span class="line">  <span class="attr">age</span>: <span class="number">25</span>,</span><br><span class="line">  <span class="attr">sayHello</span>: <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;Hello!&#x27;</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>在上述示例中，定义了一个<code>Person</code>接口，它具有<code>name</code>和<code>age</code>属性，以及一个返回值为空的<code>sayHello</code>方法。然后，使用该接口定义了一个<code>person</code>对象，该对象符合<code>Person</code>接口的结构和类型要求。</p>
+<h3 id="2-类型别名（Type-Aliases）"><a href="#2-类型别名（Type-Aliases）" class="headerlink" title="2.类型别名（Type Aliases）"></a>2.类型别名（Type Aliases）</h3><p>类型别名允许为现有类型创建一个新名称。它们可以用于简化复杂类型的表示或为特定类型添加描述。例如：</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> <span class="title class_">Point</span> = &#123;</span><br><span class="line">  <span class="attr">x</span>: <span class="built_in">number</span>;</span><br><span class="line">  <span class="attr">y</span>: <span class="built_in">number</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> <span class="attr">p</span>: <span class="title class_">Point</span> = &#123;</span><br><span class="line">  <span class="attr">x</span>: <span class="number">10</span>,</span><br><span class="line">  <span class="attr">y</span>: <span class="number">20</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>在上述示例中，定义了一个名为<code>Point</code>的类型别名，它表示一个具有<code>x</code>和<code>y</code>属性的对象。然后，使用该类型别名定义了一个<code>p</code>对象，该对象符合<code>Point</code>类型的结构和类型要求。</p>
+<p>类型别名还可以与联合类型、交叉类型等结合使用，提供更复杂的类型定义。</p>
+<p>接口和类型别名在定义自定义类型时都非常有用，选择使用哪个取决于具体情况。一般来说，当需要描述对象的结构和属性时，可以优先考虑使用接口；而当需要为现有类型创建一个新名称或定义复杂类型时，可以使用类型别名。</p>
+<h2 id="三、探索泛型的概念和用法"><a href="#三、探索泛型的概念和用法" class="headerlink" title="三、探索泛型的概念和用法"></a>三、探索泛型的概念和用法</h2><p>泛型（Generics）是一种在编程语言中用于创建可重用、通用的代码的概念。它允许在定义函数、类或接口时使用参数化类型，以便在使用时指定具体的类型。泛型提供了更大的灵活性和类型安全性，使代码能够适应不同的数据类型。</p>
+<p>以下是泛型的一些常见用法和概念：</p>
+<h3 id="1-泛型函数（Generic-Functions）"><a href="#1-泛型函数（Generic-Functions）" class="headerlink" title="1.泛型函数（Generic Functions）"></a>1.泛型函数（Generic Functions）</h3><p>可以在函数定义中使用泛型参数来表示函数的参数类型、返回类型或两者。例如：</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> identity&lt;T&gt;(<span class="attr">arg</span>: T): T &#123;</span><br><span class="line">  <span class="keyword">return</span> arg;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> result = identity&lt;<span class="built_in">string</span>&gt;(<span class="string">&#x27;Hello&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<p>在上述示例中，<code>identity</code>函数使用了泛型参数<code>&lt;T&gt;</code>，它表示函数可以接受任意类型的参数，并返回相同类型的结果。在调用函数时，通过传递类型参数<code>&lt;string&gt;</code>来指定具体的类型。</p>
+<h3 id="2-泛型类（Generic-Classes）"><a href="#2-泛型类（Generic-Classes）" class="headerlink" title="2.泛型类（Generic Classes）"></a>2.泛型类（Generic Classes）</h3><p>类也可以使用泛型参数来定义可重用的通用类。例如：</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Container</span>&lt;T&gt; &#123;</span><br><span class="line">  <span class="keyword">private</span> <span class="attr">value</span>: T;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">constructor</span>(<span class="params">value: T</span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">value</span> = value;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">getValue</span>(): T &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">value</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> container = <span class="keyword">new</span> <span class="title class_">Container</span>&lt;<span class="built_in">number</span>&gt;(<span class="number">10</span>);</span><br><span class="line"><span class="keyword">let</span> value = container.<span class="title function_">getValue</span>();</span><br></pre></td></tr></table></figure>
+
+<p>在上述示例中，<code>Container</code>类使用了泛型参数<code>&lt;T&gt;</code>，它表示类中的值可以是任意类型。在创建类实例时，通过传递类型参数<code>&lt;number&gt;</code>来指定具体的类型。</p>
+<h3 id="3-泛型接口（Generic-Interfaces）"><a href="#3-泛型接口（Generic-Interfaces）" class="headerlink" title="3.泛型接口（Generic Interfaces）"></a>3.泛型接口（Generic Interfaces）</h3><p>接口也可以使用泛型参数来定义通用接口。例如：</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> <span class="title class_">List</span>&lt;T&gt; &#123;</span><br><span class="line">  <span class="title function_">add</span>(<span class="attr">item</span>: T): <span class="built_in">void</span>;</span><br><span class="line">  <span class="title function_">get</span>(<span class="attr">index</span>: <span class="built_in">number</span>): T;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">MyList</span>&lt;T&gt; <span class="keyword">implements</span> <span class="title class_">List</span>&lt;T&gt; &#123;</span><br><span class="line">  <span class="keyword">private</span> <span class="attr">items</span>: T[] = [];</span><br><span class="line"></span><br><span class="line">  <span class="title function_">add</span>(<span class="attr">item</span>: T): <span class="built_in">void</span> &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">items</span>.<span class="title function_">push</span>(item);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">get</span>(<span class="attr">index</span>: <span class="built_in">number</span>): T &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">items</span>[index];</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> myList = <span class="keyword">new</span> <span class="title class_">MyList</span>&lt;<span class="built_in">number</span>&gt;();</span><br><span class="line">myList.<span class="title function_">add</span>(<span class="number">1</span>);</span><br><span class="line"><span class="keyword">let</span> value = myList.<span class="title function_">get</span>(<span class="number">0</span>);</span><br></pre></td></tr></table></figure>
+
+<p>在上述示例中，<code>List</code>接口使用了泛型参数<code>&lt;T&gt;</code>，它表示接口中的方法可以操作任意类型的数据。<code>MyList</code>类实现了<code>List</code>接口，并通过类型参数<code>&lt;number&gt;</code>指定了具体的类型。</p>
+<p>泛型在许多情况下都非常有用，特别是在编写通用的数据结构和算法时。它提供了更强大的类型检查和类型推断，使代码更安全和可维护。使用泛型可以提高代码的重用性，并且能够处理各种不同类型的数据。</p>
+<h1 id="高级特性"><a href="#高级特性" class="headerlink" title="高级特性"></a>高级特性</h1><h2 id="一、学习TypeScript中的模块化和命名空间"><a href="#一、学习TypeScript中的模块化和命名空间" class="headerlink" title="一、学习TypeScript中的模块化和命名空间"></a>一、学习TypeScript中的模块化和命名空间</h2><p>在TypeScript中，模块化和命名空间是组织和管理代码的重要概念。它们有助于将代码分割成可维护和可重用的模块，并提供了一种避免命名冲突的机制。让我们逐个介绍这两个概念。</p>
+<h3 id="1-模块化（Modules）"><a href="#1-模块化（Modules）" class="headerlink" title="1.模块化（Modules）"></a>1.模块化（Modules）</h3><p>模块化是将代码划分为独立的功能模块，每个模块负责特定的任务。模块可以包含变量、函数、类和接口等，并且可以导出（export）这些定义，使其可供其他模块引用。同时，模块也可以导入（import）其他模块中导出的内容，以便在当前模块中使用。</p>
+<p>例如，假设我们有一个名为<code>math.ts</code>的模块，其中定义了一些数学相关的函数：</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">function</span> <span class="title function_">add</span>(<span class="params">a: <span class="built_in">number</span>, b: <span class="built_in">number</span></span>): <span class="built_in">number</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> a + b;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">function</span> <span class="title function_">multiply</span>(<span class="params">a: <span class="built_in">number</span>, b: <span class="built_in">number</span></span>): <span class="built_in">number</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> a * b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>然后，在另一个文件中可以导入并使用这些函数：</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; add, multiply &#125; <span class="keyword">from</span> <span class="string">&#x27;./math&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">add</span>(<span class="number">2</span>, <span class="number">3</span>)); <span class="comment">// 输出: 5</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">multiply</span>(<span class="number">2</span>, <span class="number">3</span>)); <span class="comment">// 输出: 6</span></span><br></pre></td></tr></table></figure>
+
+<p>使用模块化可以提高代码的可维护性和可重用性，同时避免了全局命名冲突的问题。</p>
+<h3 id="2-命名空间（Namespaces）"><a href="#2-命名空间（Namespaces）" class="headerlink" title="2.命名空间（Namespaces）"></a>2.命名空间（Namespaces）</h3><p>命名空间提供了一种将相关的代码组织在一起的机制，以避免全局作用域中的命名冲突。命名空间可以包含变量、函数、类和接口等定义，并使用<code>namespace</code>关键字进行声明。</p>
+<p>例如，假设我们有一个名为<code>Geometry</code>的命名空间，其中包含了一些几何图形的定义：</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">namespace</span> <span class="title class_">Geometry</span> &#123;</span><br><span class="line">  <span class="keyword">export</span> <span class="keyword">interface</span> <span class="title class_">Point</span> &#123;</span><br><span class="line">    <span class="attr">x</span>: <span class="built_in">number</span>;</span><br><span class="line">    <span class="attr">y</span>: <span class="built_in">number</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">export</span> <span class="keyword">function</span> <span class="title function_">distance</span>(<span class="params">p1: Point, p2: Point</span>): <span class="built_in">number</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> dx = p2.<span class="property">x</span> - p1.<span class="property">x</span>;</span><br><span class="line">    <span class="keyword">const</span> dy = p2.<span class="property">y</span> - p1.<span class="property">y</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="title class_">Math</span>.<span class="title function_">sqrt</span>(dx * dx + dy * dy);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>然后，在另一个文件中可以通过命名空间访问这些定义：</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="attr">p1</span>: <span class="title class_">Geometry</span>.<span class="property">Point</span> = &#123; <span class="attr">x</span>: <span class="number">0</span>, <span class="attr">y</span>: <span class="number">0</span> &#125;;</span><br><span class="line"><span class="keyword">const</span> <span class="attr">p2</span>: <span class="title class_">Geometry</span>.<span class="property">Point</span> = &#123; <span class="attr">x</span>: <span class="number">3</span>, <span class="attr">y</span>: <span class="number">4</span> &#125;;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Geometry</span>.<span class="title function_">distance</span>(p1, p2)); <span class="comment">// 输出: 5</span></span><br></pre></td></tr></table></figure>
+
+<p>使用命名空间可以将相关的代码组织在一起，并提供更好的代码结构和可读性。</p>
+<p>需要注意的是，TypeScript也支持使用模块化语法来替代命名空间。</p>
+<h2 id="二、理解装饰器的作用和使用方式"><a href="#二、理解装饰器的作用和使用方式" class="headerlink" title="二、理解装饰器的作用和使用方式"></a>二、理解装饰器的作用和使用方式</h2><p>装饰器（Decorators）是一种在类、方法、属性或参数上附加元数据的特殊类型声明。它们提供了一种简洁且可重用的方式来修改类的行为或修改类中的成员。</p>
+<p>装饰器可以在不修改源代码的情况下，通过在类或成员周围添加装饰器来改变它们的行为。装饰器使用 <code>@</code> 符号紧跟着一个装饰器工厂函数或装饰器工厂表达式的形式来定义。</p>
+<p>下面是一些常见的装饰器示例：</p>
+<h3 id="1-类装饰器（Class-Decorators）"><a href="#1-类装饰器（Class-Decorators）" class="headerlink" title="1.类装饰器（Class Decorators）"></a>1.类装饰器（Class Decorators）</h3><p>类装饰器用于修改类的行为。它们在类声明之前声明，并接收类的构造函数作为参数。常见的用途包括添加额外的功能、修改类的属性或方法等。</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">classDecorator</span>(<span class="params">constructor: <span class="built_in">Function</span></span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;Class decorator&#x27;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@classDecorator</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">MyClass</span> &#123;</span><br><span class="line">  <span class="comment">// 类的定义</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-方法装饰器（Method-Decorators）"><a href="#2-方法装饰器（Method-Decorators）" class="headerlink" title="2.方法装饰器（Method Decorators）"></a>2.方法装饰器（Method Decorators）</h3><p>方法装饰器用于修改类中的方法。它们在方法声明之前声明，并接收三个参数：类的原型、方法名称和方法的属性描述符。常见的用途包括添加日志、验证或修改方法的行为。</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">methodDecorator</span>(<span class="params">target: <span class="built_in">any</span>, propertyKey: <span class="built_in">string</span>, descriptor: PropertyDescriptor</span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;Method decorator&#x27;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">MyClass</span> &#123;</span><br><span class="line">  <span class="meta">@methodDecorator</span></span><br><span class="line">  <span class="title function_">myMethod</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="comment">// 方法的定义</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-属性装饰器（Property-Decorators）"><a href="#3-属性装饰器（Property-Decorators）" class="headerlink" title="3.属性装饰器（Property Decorators）"></a>3.属性装饰器（Property Decorators）</h3><p>属性装饰器用于修改类中的属性。它们在属性声明之前声明，并接收两个参数：类的原型和属性名称。常见的用途包括添加额外的属性或修改属性的行为。</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">propertyDecorator</span>(<span class="params">target: <span class="built_in">any</span>, propertyKey: <span class="built_in">string</span></span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;Property decorator&#x27;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">MyClass</span> &#123;</span><br><span class="line">  <span class="meta">@propertyDecorator</span></span><br><span class="line">  <span class="attr">myProperty</span>: <span class="built_in">string</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>4.参数装饰器（Parameter Decorators）<br>参数装饰器用于修改类中方法的参数。它们在参数声明之前声明，并接收三个参数：类的原型、方法名称和参数的索引。常见的用途包括参数验证或修改参数的值。</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">parameterDecorator</span>(<span class="params">target: <span class="built_in">any</span>, propertyKey: <span class="built_in">string</span>, parameterIndex: <span class="built_in">number</span></span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;Parameter decorator&#x27;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">MyClass</span> &#123;</span><br><span class="line">  <span class="title function_">myMethod</span>(<span class="params"><span class="meta">@parameterDecorator</span> param: <span class="built_in">string</span></span>) &#123;</span><br><span class="line">    <span class="comment">// 方法的定义</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>装饰器可以通过链式使用，多个装饰器按照从上到下的顺序依次执行。装饰器的执行顺序可以影响修改的结果。</p>
+<p>需要注意的是，装饰器是一个实验性的特性，在TypeScript中需要启用 <code>experimentalDecorators</code> 和 <code>emitDecoratorMetadata</code> 选项来使用装饰器。此外，装饰器功能目前在不同的JavaScript运行时和编译器之间存在一些差异。</p>
+<h2 id="三、探索异步编程和Promise、async-x2F-await等特性"><a href="#三、探索异步编程和Promise、async-x2F-await等特性" class="headerlink" title="三、探索异步编程和Promise、async&#x2F;await等特性"></a>三、探索异步编程和Promise、async&#x2F;await等特性</h2><p>异步编程是指在程序执行过程中可以同时执行多个操作，而不会阻塞其他代码的执行。TypeScript提供了一些特性来简化异步编程，包括Promise、async&#x2F;await等。</p>
+<h3 id="1-Promise"><a href="#1-Promise" class="headerlink" title="1.Promise"></a>1.Promise</h3><p>Promise 是一种表示异步操作的对象，它可以用于处理异步操作的成功或失败，并提供了一种链式调用的方式。Promise 可以被认为是一个包装了异步操作的容器，它可以有三种状态：pending（进行中）、fulfilled（已成功）和rejected（已失败）。</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> fetchData = (): <span class="title class_">Promise</span>&lt;<span class="built_in">string</span>&gt; =&gt; &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">const</span> data = <span class="string">&quot;Hello, World!&quot;</span>;</span><br><span class="line">      <span class="title function_">resolve</span>(data); <span class="comment">// 异步操作成功时调用 resolve</span></span><br><span class="line">      <span class="comment">// reject(new Error(&quot;Something went wrong&quot;)); // 异步操作失败时调用 reject</span></span><br><span class="line">    &#125;, <span class="number">2000</span>);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="title function_">fetchData</span>()</span><br><span class="line">  .<span class="title function_">then</span>(<span class="function">(<span class="params">data</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(data); <span class="comment">// 在异步操作成功后执行</span></span><br><span class="line">  &#125;)</span><br><span class="line">  .<span class="title function_">catch</span>(<span class="function">(<span class="params">error</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">error</span>(error); <span class="comment">// 在异步操作失败后执行</span></span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-async-x2F-await"><a href="#2-async-x2F-await" class="headerlink" title="2.async&#x2F;await"></a>2.async&#x2F;await</h3><p>async&#x2F;await 是一种更加简洁和直观的异步编程方式，它是基于 Promise 的语法糖。使用 async 关键字声明的函数会返回一个 Promise 对象，并且可以在函数内部使用 await 关键字来等待一个 Promise 的解析结果。</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> fetchData = (): <span class="title class_">Promise</span>&lt;<span class="built_in">string</span>&gt; =&gt; &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">const</span> data = <span class="string">&quot;Hello, World!&quot;</span>;</span><br><span class="line">      <span class="title function_">resolve</span>(data); <span class="comment">// 异步操作成功时调用 resolve</span></span><br><span class="line">      <span class="comment">// reject(new Error(&quot;Something went wrong&quot;)); // 异步操作失败时调用 reject</span></span><br><span class="line">    &#125;, <span class="number">2000</span>);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> fetchDataAsync = <span class="keyword">async</span> (): <span class="title class_">Promise</span>&lt;<span class="built_in">void</span>&gt; =&gt; &#123;</span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> data = <span class="keyword">await</span> <span class="title function_">fetchData</span>(); <span class="comment">// 等待 Promise 解析结果</span></span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(data); <span class="comment">// 在异步操作成功后执行</span></span><br><span class="line">  &#125; <span class="keyword">catch</span> (error) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">error</span>(error); <span class="comment">// 在异步操作失败后执行</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="title function_">fetchDataAsync</span>();</span><br></pre></td></tr></table></figure>
+
+<p>使用 async&#x2F;await 可以使异步代码的编写更加类似于同步代码的风格，增强了代码的可读性和可维护性。</p>
+<p>除了 Promise 和 async&#x2F;await，TypeScript 还提供了其他一些处理异步编程的特性，如生成器函数（Generator Functions）和异步迭代器（Async Iterators），它们更适用于一些特定的场景和需求。</p>
+<h1 id="与JavaScript的互操作性"><a href="#与JavaScript的互操作性" class="headerlink" title="与JavaScript的互操作性"></a>与JavaScript的互操作性</h1><h2 id="一、学习如何使用TypeScript与现有的JavaScript库和框架进行交互"><a href="#一、学习如何使用TypeScript与现有的JavaScript库和框架进行交互" class="headerlink" title="一、学习如何使用TypeScript与现有的JavaScript库和框架进行交互"></a>一、学习如何使用TypeScript与现有的JavaScript库和框架进行交互</h2><p>当使用 TypeScript 与现有的 JavaScript 库和框架进行交互时，你可以采取以下几种方法：</p>
+<h3 id="1-类型声明文件（Type-Declaration-Files）"><a href="#1-类型声明文件（Type-Declaration-Files）" class="headerlink" title="1.类型声明文件（Type Declaration Files）"></a>1.类型声明文件（Type Declaration Files）</h3><p>TypeScript 使用类型声明文件（通常以 <code>.d.ts</code> 为扩展名）来描述 JavaScript 库和框架的类型信息。这些声明文件包含了类型定义和接口声明，以便在 TypeScript 中进行类型检查和智能提示。</p>
+<p>你可以在 DefinitelyTyped（<a target="_blank" rel="noopener" href="https://definitelytyped.org/%EF%BC%89%E7%BD%91%E7%AB%99%E4%B8%8A%E6%89%BE%E5%88%B0%E5%90%84%E7%A7%8D%E6%B5%81%E8%A1%8C%E7%9A%84">https://definitelytyped.org/）网站上找到各种流行的</a> JavaScript 库和框架的类型声明文件。将所需的声明文件安装到你的 TypeScript 项目中，然后就可以与该库或框架进行类型安全的交互。</p>
+<h3 id="2-声明全局变量（Declare-Global-Variables）"><a href="#2-声明全局变量（Declare-Global-Variables）" class="headerlink" title="2.声明全局变量（Declare Global Variables）"></a>2.声明全局变量（Declare Global Variables）</h3><p>如果你要与一个没有类型声明文件的 JavaScript 库或框架进行交互，你可以使用 <code>declare</code> 关键字声明全局变量，以便 TypeScript 可以识别和推断这些变量的类型。</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">declare</span> <span class="keyword">var</span> <span class="title class_">MyLibrary</span>: <span class="built_in">any</span>;</span><br></pre></td></tr></table></figure>
+
+<p>这样，你就可以在 TypeScript 中使用 <code>MyLibrary</code> 变量，尽管它没有明确定义类型。</p>
+<h3 id="3-类型断言（Type-Assertion）"><a href="#3-类型断言（Type-Assertion）" class="headerlink" title="3.类型断言（Type Assertion）"></a>3.类型断言（Type Assertion）</h3><p>当你确定某个变量的类型时，你可以使用类型断言来告诉 TypeScript 编译器该变量的实际类型。</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="attr">result</span>: <span class="built_in">any</span> = <span class="title function_">someFunction</span>();</span><br><span class="line"><span class="keyword">const</span> <span class="attr">specificResult</span>: <span class="title class_">SpecificType</span> = result <span class="keyword">as</span> <span class="title class_">SpecificType</span>;</span><br></pre></td></tr></table></figure>
+
+<p>在这个例子中，<code>result</code> 变量的类型被断言为 <code>SpecificType</code>，以便在后续代码中以正确的类型使用它。</p>
+<h3 id="4-扩展类型定义"><a href="#4-扩展类型定义" class="headerlink" title="4.扩展类型定义"></a>4.扩展类型定义</h3><p>如果你发现某个库或框架的类型声明文件不完整或不准确，你可以创建一个自定义的类型声明文件来扩展它们的类型定义。</p>
+<p>创建一个以 <code>.d.ts</code> 为扩展名的新文件，并在其中编写相应的类型声明。例如，你可以声明一个全局模块来扩展某个库的类型定义。</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// custom.d.ts</span></span><br><span class="line"><span class="keyword">declare</span> <span class="variable language_">module</span> <span class="string">&#x27;my-library&#x27;</span> &#123;</span><br><span class="line">  <span class="keyword">export</span> <span class="keyword">function</span> <span class="title function_">myFunction</span>(<span class="params"></span>): <span class="built_in">void</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这样，你可以在代码中使用 <code>import</code> 或 <code>require</code> 来导入你自定义的类型声明。</p>
+<h3 id="5-使用第三方库的-TypeScript-版本"><a href="#5-使用第三方库的-TypeScript-版本" class="headerlink" title="5.使用第三方库的 TypeScript 版本"></a>5.使用第三方库的 TypeScript 版本</h3><p>有些流行的 JavaScript 库和框架已经提供了官方的 TypeScript 版本，这些版本包含了完整的类型定义，可以直接在 TypeScript 项目中使用。</p>
+<p>你可以通过 npm 或 yarn 等包管理工具安装这些 TypeScript 版本的库，然后在代码中导入并使用它们。</p>
+<p>以上是几种常用的方法，用于在 TypeScript 中与现有的 JavaScript 库和框架进行交互。根据具体的情况和需求，你可以选择适合的方法来获得类型安全和良好的开发体验。</p>
+<h2 id="二、理解类型声明文件和如何使用它们扩展JavaScript库的类型信息"><a href="#二、理解类型声明文件和如何使用它们扩展JavaScript库的类型信息" class="headerlink" title="二、理解类型声明文件和如何使用它们扩展JavaScript库的类型信息"></a>二、理解类型声明文件和如何使用它们扩展JavaScript库的类型信息</h2><p>类型声明文件（Type Declaration Files）是用于描述 JavaScript 库和框架的类型信息的文件。它们为 TypeScript 提供了与 JavaScript 库进行类型安全交互的能力。类型声明文件通常具有 <code>.d.ts</code> 的文件扩展名。</p>
+<p>类型声明文件包含了库的函数、对象、类和模块的类型定义和接口声明。它们告诉 TypeScript 编译器如何理解和推断 JavaScript 库的类型，从而提供类型检查、智能提示和代码补全等功能。</p>
+<p>以下是使用类型声明文件扩展 JavaScript 库类型信息的步骤：</p>
+<h3 id="1-安装类型声明文件"><a href="#1-安装类型声明文件" class="headerlink" title="1.安装类型声明文件"></a>1.安装类型声明文件</h3><p>首先，你需要找到适合你使用的 JavaScript 库的类型声明文件。可以通过 npm 包管理器来安装类型声明文件，例如：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install @types/library-name</span><br></pre></td></tr></table></figure>
+
+<p>上述命令会安装名为 <code>@types/library-name</code> 的类型声明文件，其中 <code>library-name</code> 是你要扩展的 JavaScript 库的名称。</p>
+<h3 id="2-引入类型声明文件"><a href="#2-引入类型声明文件" class="headerlink" title="2.引入类型声明文件"></a>2.引入类型声明文件</h3><p>在 TypeScript 项目中，你需要在代码文件中引入类型声明文件，以便 TypeScript 编译器可以读取和使用其中的类型信息。你可以使用 <code>import</code> 或 <code>/// &lt;reference&gt;</code> 来引入类型声明文件。</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 使用 import 引入类型声明文件</span></span><br><span class="line"><span class="keyword">import</span> * <span class="keyword">as</span> libraryName <span class="keyword">from</span> <span class="string">&#x27;library-name&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用 /// &lt;reference&gt; 引入类型声明文件</span></span><br><span class="line"><span class="comment">/// &lt;reference types=&quot;library-name&quot; /&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>确保在你的代码文件中正确引入了相关的类型声明文件。</p>
+<h3 id="3-使用库的类型信息"><a href="#3-使用库的类型信息" class="headerlink" title="3.使用库的类型信息"></a>3.使用库的类型信息</h3><p>一旦你引入了类型声明文件，TypeScript 编译器就能够根据其中的类型信息提供代码补全、智能提示和类型检查等功能。你可以使用库提供的函数、对象、类和模块，并获得与 JavaScript 类似的开发体验。</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 使用库提供的函数</span></span><br><span class="line">libraryName.<span class="title function_">someFunction</span>();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用库提供的对象</span></span><br><span class="line"><span class="keyword">const</span> instance = <span class="keyword">new</span> libraryName.<span class="title class_">SomeClass</span>();</span><br><span class="line">instance.<span class="title function_">someMethod</span>();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用库提供的模块</span></span><br><span class="line"><span class="keyword">import</span> &#123; someFunction &#125; <span class="keyword">from</span> <span class="string">&#x27;library-name/module-name&#x27;</span>;</span><br><span class="line"><span class="title function_">someFunction</span>();</span><br></pre></td></tr></table></figure>
+
+<p>TypeScript 编译器会根据类型声明文件中的定义，对这些代码进行类型检查，以确保类型的正确性。</p>
+<p>通过使用类型声明文件，你可以在 TypeScript 项目中获得与 JavaScript 库的类型安全交互。这为你提供了在开发过程中捕获潜在错误、提供智能提示和增强开发体验的能力。确保选择适合你使用的库的类型声明文件，并正确引入它们，以便发挥 TypeScript 的优势。</p>
+<h1 id="实际应用"><a href="#实际应用" class="headerlink" title="实际应用"></a>实际应用</h1><h2 id="一、探索如何在实际项目中使用TypeScript"><a href="#一、探索如何在实际项目中使用TypeScript" class="headerlink" title="一、探索如何在实际项目中使用TypeScript"></a>一、探索如何在实际项目中使用TypeScript</h2><p>在实际项目中使用 TypeScript 可以提供许多优势，包括更好的代码可维护性、更强的类型检查、更好的开发工具支持和更好的团队协作。下面是一些步骤和实践，可以帮助你在实际项目中成功地使用 TypeScript：</p>
+<ol>
+<li><p><strong>创建 TypeScript 项目</strong><br>首先，你需要创建一个 TypeScript 项目。你可以使用命令行或集成开发环境（IDE）来创建项目。在项目目录中运行以下命令来初始化 TypeScript 项目：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tsc --init</span><br></pre></td></tr></table></figure>
+
+<p>这将创建一个 <code>tsconfig.json</code> 文件，用于配置 TypeScript 项目的编译选项。</p>
+</li>
+<li><p><strong>配置 tsconfig.json</strong><br>打开 <code>tsconfig.json</code> 文件，并根据项目需求进行相应的配置。你可以指定编译目标版本、模块系统、输出目录等选项。还可以根据需求启用或禁用不同的 TypeScript 特性。</p>
+</li>
+<li><p><strong>将 JavaScript 文件重命名为 TypeScript 文件</strong><br>如果你已经有现有的 JavaScript 代码，你可以将其文件扩展名从 <code>.js</code> 改为 <code>.ts</code>。这样，TypeScript 编译器将开始检查并推断你的代码的类型。</p>
+</li>
+<li><p><strong>逐步启用严格的类型检查</strong><br>TypeScript 提供了不同级别的类型检查，你可以逐步启用更严格的检查。在 <code>tsconfig.json</code> 文件中，可以设置 <code>&quot;strict&quot;</code> 选项为 <code>true</code> 来启用严格模式。这将帮助你在开发过程中捕获潜在的类型错误，并提供更好的代码质量和可维护性。</p>
+</li>
+<li><p><strong>定义接口和类型</strong><br>TypeScript 的主要优势之一是类型系统。利用接口和类型别名来定义你的数据结构和函数签名。这样可以提供更好的代码提示和类型检查。</p>
+</li>
+<li><p><strong>使用模块化</strong><br>使用 TypeScript 的模块化系统（如 ES 模块或 CommonJS）来组织你的代码，并使用 <code>import</code> 和 <code>export</code> 关键字来导入和导出模块。这有助于代码的可重用性和可维护性。</p>
+</li>
+<li><p><strong>使用第三方库和类型声明文件</strong><br>如果你在项目中使用第三方 JavaScript 库，可以使用类型声明文件来提供类型信息。安装相应的类型声明文件（如 <code>@types/library-name</code>）并在代码中导入库时使用类型检查。</p>
+</li>
+<li><p><strong>使用工具和插件</strong><br>利用 TypeScript 提供的丰富工具生态系统来增强开发体验。使用编辑器或 IDE 中的 TypeScript 插件，例如代码补全、智能提示、错误检查和重构功能。</p>
+</li>
+<li><p><strong>进行类型测试和代码重构</strong><br>使用 TypeScript 提供的类型检查功能，运行项目中的测试套件，以确保代码在类型安全的环</p>
+</li>
+</ol>
+<p>境中工作。使用 TypeScript 的重构工具来改进代码结构和可读性。</p>
+<ol start="10">
+<li><strong>持续学习和社区参与</strong><br>TypeScript 是一个不断发展的技术，持续学习新特性和最佳实践是提高使用 TypeScript 技能的关键。参与 TypeScript 社区，查阅文档、教程和博客文章，与其他开发者分享经验。</li>
+</ol>
+<p>以上是一些使用 TypeScript 的实践建议，帮助你在实际项目中顺利应用 TypeScript。根据你的项目需求和团队情况，可以适当调整和扩展这些实践。</p>
+<h2 id="二、学习调试和构建TypeScript应用程序的技巧"><a href="#二、学习调试和构建TypeScript应用程序的技巧" class="headerlink" title="二、学习调试和构建TypeScript应用程序的技巧"></a>二、学习调试和构建TypeScript应用程序的技巧</h2><p>当你开发和构建 TypeScript 应用程序时，以下是一些调试和构建的技巧可以帮助你提高开发效率和确保应用程序的质量：</p>
+<h3 id="1-调试技巧"><a href="#1-调试技巧" class="headerlink" title="1.调试技巧"></a>1.调试技巧</h3><ol>
+<li><p>使用调试器：利用你的集成开发环境（IDE）或浏览器开发工具中的调试器来逐步执行代码、检查变量的值、设置断点和跟踪代码执行流程。</p>
+</li>
+<li><p>使用断点：在关键的代码行上设置断点，这样当应用程序执行到断点时，调试器将会暂停代码执行，让你能够检查当前状态和变量的值。</p>
+</li>
+<li><p>使用日志输出：在代码中使用日志输出语句（如 <code>console.log</code>）来输出变量的值、函数执行结果等，以便在开发过程中查看和验证代码的执行情况。</p>
+</li>
+<li><p>利用调试工具：使用 TypeScript 提供的调试工具，如 <code>ts-debug</code>，可以在开发过程中更方便地调试 TypeScript 代码。</p>
+</li>
+</ol>
+<h3 id="2-构建技巧"><a href="#2-构建技巧" class="headerlink" title="2.构建技巧"></a>2.构建技巧</h3><ol>
+<li><p>配置构建工具：使用常见的构建工具（如 Webpack、Parcel、Rollup 等）来打包和构建 TypeScript 应用程序。配置构建工具以正确处理 TypeScript 文件并生成可部署的 JavaScript 代码。</p>
+</li>
+<li><p>使用模块打包器：使用模块打包器（如 Webpack）将你的 TypeScript 模块打包成一个或多个捆绑文件，以便在浏览器中加载和执行。</p>
+</li>
+<li><p>优化构建过程：针对你的应用程序进行构建优化，例如使用代码分割、压缩和缓存等技术，以提高应用程序的性能和加载速度。</p>
+</li>
+<li><p>集成类型检查：在构建过程中使用 TypeScript 的类型检查功能，确保没有类型错误和潜在的问题。将类型检查作为构建过程的一部分，可以提前捕获错误，并避免将类型错误部署到生产环境中。</p>
+</li>
+<li><p>使用构建脚本：编写自定义的构建脚本，以自动执行构建任务，如编译 TypeScript、拷贝静态资源、运行测试等。使用构建工具或脚本管理工具（如 npm scripts）来定义和运行这些构建任务。</p>
+</li>
+<li><p>运行测试套件：在构建过程中集成测试套件，以确保构建的应用程序在各种场景下都能正常工作。使用测试框架（如 Jest、Mocha、Karma 等）和断言库（如 Chai、Jasmine 等）编写和执行测试。</p>
+</li>
+<li><p>部署和版本控制：使用版本控制系统（如 Git）管理你的代码，并使用自动化工具或流程来部署和发布应用程序。确保在构建过程中生成可靠和可部署的代码包，并使用适当的版本控制策略来管理代码的发布和迭代。</p>
+</li>
+</ol>
+<h2 id="三、了解TypeScript在大型项目和团队中的最佳实践"><a href="#三、了解TypeScript在大型项目和团队中的最佳实践" class="headerlink" title="三、了解TypeScript在大型项目和团队中的最佳实践"></a>三、了解TypeScript在大型项目和团队中的最佳实践</h2><p>在大型项目和团队中使用 TypeScript，以下是一些最佳实践可以帮助你提高开发效率、代码质量和团队协作：</p>
+<ol>
+<li><p>使用严格的类型检查：在 TypeScript 中，启用严格的类型检查选项（如 <code>&quot;strict&quot;: true</code>）可以帮助捕获潜在的类型错误和编码问题。这有助于提高代码质量并减少在运行时出现的错误。</p>
+</li>
+<li><p>制定一致的命名规范：在项目中制定一致的命名规范，包括变量、函数、类和文件的命名方式。这有助于提高代码的可读性和维护性，并使团队成员更容易理解和使用代码。</p>
+</li>
+<li><p>使用模块化组织代码：将代码组织为模块，使用模块化的导入和导出语法。这样可以将代码分离为可重用的模块，并提供更好的可扩展性和代码组织结构。</p>
+</li>
+<li><p>使用接口和类型定义：合理使用接口和类型别名来定义数据结构、函数签名和类的形状。这有助于提供清晰的类型定义，使代码更具可读性和可理解性。</p>
+</li>
+<li><p>设计可复用的类型：在大型项目中，经常会遇到需要在多个地方重复使用的类型。为这些类型创建可复用的类型定义，可以提高代码的可维护性和可扩展性。</p>
+</li>
+<li><p>使用工具和编辑器插件：利用 TypeScript 的生态系统中的工具和编辑器插件，如 TypeScript ESLint、Prettier、TypeScript 编辑器支持等，以提高代码的质量、一致性和开发效率。</p>
+</li>
+<li><p>编写清晰的文档：在大型项目中，编写清晰、详细的文档非常重要。文档应包括代码使用示例、API 文档、项目结构和架构说明等，以帮助团队成员了解和使用代码。</p>
+</li>
+<li><p>使用版本控制和代码审查：使用版本控制系统（如 Git）来管理代码，并实施代码审查流程。代码审查有助于发现潜在的问题、改进代码质量，并提高团队成员之间的沟通和协作。</p>
+</li>
+<li><p>编写单元测试和集成测试：编写全面的单元测试和集成测试来验证代码的正确性和稳定性。测试可以帮助发现潜在的问题，确保代码在变更和扩展时仍然正常工作。</p>
+</li>
+<li><p>持续集成和持续交付：在大型项目中实施持续集成和持续交付（CI&#x2F;CD）流程，自动化构建、测试和部署过程。这有助于确保代码的质量和稳定性，并提高团队的开发效率。</p>
+</li>
+</ol>
+<p>总之，使用 TypeScript 在大型项目和团队中需要关注类型安全、代码组织、文档编写、代码质量控制和团队协作等方面。遵循最佳实践可以提高开发效率、减少错误，并确保代码的可维护性和可扩展性。</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/TS/" rel="tag"><i class="fa fa-tag"></i> TS</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/posts/ca26.html" rel="prev" title="学习Vue 3">
+      <i class="fa fa-chevron-left"></i> 学习Vue 3
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92"><span class="nav-number">1.</span> <span class="nav-text">学习计划</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%A5%E9%97%A8"><span class="nav-number">2.</span> <span class="nav-text">入门</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81TypeScript%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E5%92%8C%E8%AF%AD%E6%B3%95"><span class="nav-number">2.1.</span> <span class="nav-text">一、TypeScript的基本概念和语法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E9%9D%99%E6%80%81%E7%B1%BB%E5%9E%8B"><span class="nav-number">2.1.1.</span> <span class="nav-text">1.静态类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E7%B1%BB%E5%9E%8B%E6%B3%A8%E8%A7%A3"><span class="nav-number">2.1.2.</span> <span class="nav-text">2.类型注解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E6%8E%A5%E5%8F%A3%EF%BC%88Interfaces%EF%BC%89"><span class="nav-number">2.1.3.</span> <span class="nav-text">3.接口（Interfaces）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E7%B1%BB%EF%BC%88Classes%EF%BC%89"><span class="nav-number">2.1.4.</span> <span class="nav-text">4.类（Classes）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-%E6%9E%9A%E4%B8%BE%EF%BC%88Enums%EF%BC%89"><span class="nav-number">2.1.5.</span> <span class="nav-text">5.枚举（Enums）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-%E6%B3%9B%E5%9E%8B%EF%BC%88Generics%EF%BC%89"><span class="nav-number">2.1.6.</span> <span class="nav-text">6.泛型（Generics）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-%E6%A8%A1%E5%9D%97%E5%8C%96%EF%BC%88Modules%EF%BC%89"><span class="nav-number">2.1.7.</span> <span class="nav-text">7.模块化（Modules）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E5%AD%A6%E4%B9%A0%E5%A6%82%E4%BD%95%E5%A3%B0%E6%98%8E%E5%8F%98%E9%87%8F%E3%80%81%E5%87%BD%E6%95%B0%E5%92%8C%E7%B1%BB"><span class="nav-number">2.2.</span> <span class="nav-text">二、学习如何声明变量、函数和类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%8F%98%E9%87%8F%E5%A3%B0%E6%98%8E"><span class="nav-number">2.2.1.</span> <span class="nav-text">1.变量声明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%87%BD%E6%95%B0%E5%A3%B0%E6%98%8E"><span class="nav-number">2.2.2.</span> <span class="nav-text">2.函数声明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E7%B1%BB%E5%A3%B0%E6%98%8E"><span class="nav-number">2.2.3.</span> <span class="nav-text">3.类声明</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E7%90%86%E8%A7%A3%E9%9D%99%E6%80%81%E7%B1%BB%E5%9E%8B%E5%92%8C%E7%B1%BB%E5%9E%8B%E6%B3%A8%E8%A7%A3%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="nav-number">2.3.</span> <span class="nav-text">三、理解静态类型和类型注解的概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E9%9D%99%E6%80%81%E7%B1%BB%E5%9E%8B%EF%BC%88Static-Typing%EF%BC%89"><span class="nav-number">2.3.1.</span> <span class="nav-text">1.静态类型（Static Typing）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E7%B1%BB%E5%9E%8B%E6%B3%A8%E8%A7%A3%EF%BC%88Type-Annotations%EF%BC%89"><span class="nav-number">2.3.2.</span> <span class="nav-text">2.类型注解（Type Annotations）</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%B1%BB%E5%9E%8B%E7%B3%BB%E7%BB%9F"><span class="nav-number">3.</span> <span class="nav-text">类型系统</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E6%B7%B1%E5%85%A5%E4%BA%86%E8%A7%A3TypeScript%E7%9A%84%E7%B1%BB%E5%9E%8B%E7%B3%BB%E7%BB%9F%EF%BC%8C%E5%8C%85%E6%8B%AC%E5%8E%9F%E5%A7%8B%E7%B1%BB%E5%9E%8B%E3%80%81%E6%95%B0%E7%BB%84%E3%80%81%E5%85%83%E7%BB%84%E3%80%81%E6%9E%9A%E4%B8%BE%E7%AD%89"><span class="nav-number">3.1.</span> <span class="nav-text">一、深入了解TypeScript的类型系统，包括原始类型、数组、元组、枚举等</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%8E%9F%E5%A7%8B%E7%B1%BB%E5%9E%8B%EF%BC%88Primitive-Types%EF%BC%89"><span class="nav-number">3.1.1.</span> <span class="nav-text">1.原始类型（Primitive Types）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E6%95%B0%E7%BB%84%EF%BC%88Arrays%EF%BC%89"><span class="nav-number">3.1.2.</span> <span class="nav-text">2.数组（Arrays）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E5%85%83%E7%BB%84%EF%BC%88Tuples%EF%BC%89"><span class="nav-number">3.1.3.</span> <span class="nav-text">3.元组（Tuples）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E6%9E%9A%E4%B8%BE%EF%BC%88Enums%EF%BC%89"><span class="nav-number">3.1.4.</span> <span class="nav-text">4.枚举（Enums）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E5%AD%A6%E4%B9%A0%E5%A6%82%E4%BD%95%E5%AE%9A%E4%B9%89%E5%92%8C%E4%BD%BF%E7%94%A8%E6%8E%A5%E5%8F%A3%E5%92%8C%E7%B1%BB%E5%9E%8B%E5%88%AB%E5%90%8D"><span class="nav-number">3.2.</span> <span class="nav-text">二、学习如何定义和使用接口和类型别名</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E6%8E%A5%E5%8F%A3%EF%BC%88Interfaces%EF%BC%89"><span class="nav-number">3.2.1.</span> <span class="nav-text">1.接口（Interfaces）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E7%B1%BB%E5%9E%8B%E5%88%AB%E5%90%8D%EF%BC%88Type-Aliases%EF%BC%89"><span class="nav-number">3.2.2.</span> <span class="nav-text">2.类型别名（Type Aliases）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E6%8E%A2%E7%B4%A2%E6%B3%9B%E5%9E%8B%E7%9A%84%E6%A6%82%E5%BF%B5%E5%92%8C%E7%94%A8%E6%B3%95"><span class="nav-number">3.3.</span> <span class="nav-text">三、探索泛型的概念和用法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E6%B3%9B%E5%9E%8B%E5%87%BD%E6%95%B0%EF%BC%88Generic-Functions%EF%BC%89"><span class="nav-number">3.3.1.</span> <span class="nav-text">1.泛型函数（Generic Functions）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E6%B3%9B%E5%9E%8B%E7%B1%BB%EF%BC%88Generic-Classes%EF%BC%89"><span class="nav-number">3.3.2.</span> <span class="nav-text">2.泛型类（Generic Classes）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E6%B3%9B%E5%9E%8B%E6%8E%A5%E5%8F%A3%EF%BC%88Generic-Interfaces%EF%BC%89"><span class="nav-number">3.3.3.</span> <span class="nav-text">3.泛型接口（Generic Interfaces）</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%AB%98%E7%BA%A7%E7%89%B9%E6%80%A7"><span class="nav-number">4.</span> <span class="nav-text">高级特性</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E5%AD%A6%E4%B9%A0TypeScript%E4%B8%AD%E7%9A%84%E6%A8%A1%E5%9D%97%E5%8C%96%E5%92%8C%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4"><span class="nav-number">4.1.</span> <span class="nav-text">一、学习TypeScript中的模块化和命名空间</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E6%A8%A1%E5%9D%97%E5%8C%96%EF%BC%88Modules%EF%BC%89"><span class="nav-number">4.1.1.</span> <span class="nav-text">1.模块化（Modules）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4%EF%BC%88Namespaces%EF%BC%89"><span class="nav-number">4.1.2.</span> <span class="nav-text">2.命名空间（Namespaces）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E7%90%86%E8%A7%A3%E8%A3%85%E9%A5%B0%E5%99%A8%E7%9A%84%E4%BD%9C%E7%94%A8%E5%92%8C%E4%BD%BF%E7%94%A8%E6%96%B9%E5%BC%8F"><span class="nav-number">4.2.</span> <span class="nav-text">二、理解装饰器的作用和使用方式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E7%B1%BB%E8%A3%85%E9%A5%B0%E5%99%A8%EF%BC%88Class-Decorators%EF%BC%89"><span class="nav-number">4.2.1.</span> <span class="nav-text">1.类装饰器（Class Decorators）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E6%96%B9%E6%B3%95%E8%A3%85%E9%A5%B0%E5%99%A8%EF%BC%88Method-Decorators%EF%BC%89"><span class="nav-number">4.2.2.</span> <span class="nav-text">2.方法装饰器（Method Decorators）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E5%B1%9E%E6%80%A7%E8%A3%85%E9%A5%B0%E5%99%A8%EF%BC%88Property-Decorators%EF%BC%89"><span class="nav-number">4.2.3.</span> <span class="nav-text">3.属性装饰器（Property Decorators）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E6%8E%A2%E7%B4%A2%E5%BC%82%E6%AD%A5%E7%BC%96%E7%A8%8B%E5%92%8CPromise%E3%80%81async-x2F-await%E7%AD%89%E7%89%B9%E6%80%A7"><span class="nav-number">4.3.</span> <span class="nav-text">三、探索异步编程和Promise、async&#x2F;await等特性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Promise"><span class="nav-number">4.3.1.</span> <span class="nav-text">1.Promise</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-async-x2F-await"><span class="nav-number">4.3.2.</span> <span class="nav-text">2.async&#x2F;await</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%8EJavaScript%E7%9A%84%E4%BA%92%E6%93%8D%E4%BD%9C%E6%80%A7"><span class="nav-number">5.</span> <span class="nav-text">与JavaScript的互操作性</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E5%AD%A6%E4%B9%A0%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8TypeScript%E4%B8%8E%E7%8E%B0%E6%9C%89%E7%9A%84JavaScript%E5%BA%93%E5%92%8C%E6%A1%86%E6%9E%B6%E8%BF%9B%E8%A1%8C%E4%BA%A4%E4%BA%92"><span class="nav-number">5.1.</span> <span class="nav-text">一、学习如何使用TypeScript与现有的JavaScript库和框架进行交互</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E7%B1%BB%E5%9E%8B%E5%A3%B0%E6%98%8E%E6%96%87%E4%BB%B6%EF%BC%88Type-Declaration-Files%EF%BC%89"><span class="nav-number">5.1.1.</span> <span class="nav-text">1.类型声明文件（Type Declaration Files）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%A3%B0%E6%98%8E%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F%EF%BC%88Declare-Global-Variables%EF%BC%89"><span class="nav-number">5.1.2.</span> <span class="nav-text">2.声明全局变量（Declare Global Variables）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E7%B1%BB%E5%9E%8B%E6%96%AD%E8%A8%80%EF%BC%88Type-Assertion%EF%BC%89"><span class="nav-number">5.1.3.</span> <span class="nav-text">3.类型断言（Type Assertion）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E6%89%A9%E5%B1%95%E7%B1%BB%E5%9E%8B%E5%AE%9A%E4%B9%89"><span class="nav-number">5.1.4.</span> <span class="nav-text">4.扩展类型定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-%E4%BD%BF%E7%94%A8%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93%E7%9A%84-TypeScript-%E7%89%88%E6%9C%AC"><span class="nav-number">5.1.5.</span> <span class="nav-text">5.使用第三方库的 TypeScript 版本</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E7%90%86%E8%A7%A3%E7%B1%BB%E5%9E%8B%E5%A3%B0%E6%98%8E%E6%96%87%E4%BB%B6%E5%92%8C%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%E5%AE%83%E4%BB%AC%E6%89%A9%E5%B1%95JavaScript%E5%BA%93%E7%9A%84%E7%B1%BB%E5%9E%8B%E4%BF%A1%E6%81%AF"><span class="nav-number">5.2.</span> <span class="nav-text">二、理解类型声明文件和如何使用它们扩展JavaScript库的类型信息</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%AE%89%E8%A3%85%E7%B1%BB%E5%9E%8B%E5%A3%B0%E6%98%8E%E6%96%87%E4%BB%B6"><span class="nav-number">5.2.1.</span> <span class="nav-text">1.安装类型声明文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%BC%95%E5%85%A5%E7%B1%BB%E5%9E%8B%E5%A3%B0%E6%98%8E%E6%96%87%E4%BB%B6"><span class="nav-number">5.2.2.</span> <span class="nav-text">2.引入类型声明文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E4%BD%BF%E7%94%A8%E5%BA%93%E7%9A%84%E7%B1%BB%E5%9E%8B%E4%BF%A1%E6%81%AF"><span class="nav-number">5.2.3.</span> <span class="nav-text">3.使用库的类型信息</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%9E%E9%99%85%E5%BA%94%E7%94%A8"><span class="nav-number">6.</span> <span class="nav-text">实际应用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E6%8E%A2%E7%B4%A2%E5%A6%82%E4%BD%95%E5%9C%A8%E5%AE%9E%E9%99%85%E9%A1%B9%E7%9B%AE%E4%B8%AD%E4%BD%BF%E7%94%A8TypeScript"><span class="nav-number">6.1.</span> <span class="nav-text">一、探索如何在实际项目中使用TypeScript</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E5%AD%A6%E4%B9%A0%E8%B0%83%E8%AF%95%E5%92%8C%E6%9E%84%E5%BB%BATypeScript%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%9A%84%E6%8A%80%E5%B7%A7"><span class="nav-number">6.2.</span> <span class="nav-text">二、学习调试和构建TypeScript应用程序的技巧</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E8%B0%83%E8%AF%95%E6%8A%80%E5%B7%A7"><span class="nav-number">6.2.1.</span> <span class="nav-text">1.调试技巧</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E6%9E%84%E5%BB%BA%E6%8A%80%E5%B7%A7"><span class="nav-number">6.2.2.</span> <span class="nav-text">2.构建技巧</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E4%BA%86%E8%A7%A3TypeScript%E5%9C%A8%E5%A4%A7%E5%9E%8B%E9%A1%B9%E7%9B%AE%E5%92%8C%E5%9B%A2%E9%98%9F%E4%B8%AD%E7%9A%84%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5"><span class="nav-number">6.3.</span> <span class="nav-text">三、了解TypeScript在大型项目和团队中的最佳实践</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Robert Joe"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">Robert Joe</p>
+  <div class="site-description" itemprop="description">一个生动有趣记录学习的博客网站，涉及前后端开发，数据结构，操作系统等计算机相关知识，考研408分享，AI工具分享</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/xlbth" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;xlbth" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:wygwnzs@qq.com" title="E-Mail → mailto:wygwnzs@qq.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://blog.csdn.net/weixin_56522476?type=blog" title="CSDN → https:&#x2F;&#x2F;blog.csdn.net&#x2F;weixin_56522476?type&#x3D;blog" rel="noopener" target="_blank"><i class="fab fa-telegram fa-fw"></i>CSDN</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/442551932?spm_id_from=333.1007.0.0" title="BiliBli → https:&#x2F;&#x2F;space.bilibili.com&#x2F;442551932?spm_id_from&#x3D;333.1007.0.0" rel="noopener" target="_blank"><i class="fab fa-youtube fa-fw"></i>BiliBli</a>
+      </span>
+  </div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Robert Joe</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">143k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">2:10</span>
+</div>
+<!-- 网站运行时间的设置 -->
+<span id="timeDate">载入天数...</span>
+<span id="times">载入时分秒...</span>
+<script>
+    var now = new Date();
+    function createtime() {
+        var grt= new Date("08/10/2021 12:00:00");//此处修改你的建站时间或者网站上线时间
+        now.setTime(now.getTime()+250);
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+        document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 ";
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+    }
+    setInterval("createtime()",250);
+</script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<span><br></span> 
+
+<span class="post-meta-item-icon">
+      <i class="fa fa-user"></i>
+</span>
+<span>总访客&nbsp<span id="busuanzi_value_site_uv"></span>&nbsp人</span>
+    <span class="post-meta-divider">|</span>
+<span class="post-meta-item-icon">
+      <i class="fa fa-eye"></i>
+</span>
+    <span>总访问量&nbsp<span id="busuanzi_value_site_pv"></span>&nbsp次</span>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/hijiki.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":0.7},"log":false});</script></body>
+</html>
