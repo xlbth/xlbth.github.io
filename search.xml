@@ -1,6 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>“Hexo使用教程”</title>
+    <url>/posts/42bd.html</url>
+    <content><![CDATA[<h1 id="HEXO快捷指令"><a href="#HEXO快捷指令" class="headerlink" title="HEXO快捷指令"></a>HEXO快捷指令</h1><h3 id="创建新blog命令"><a href="#创建新blog命令" class="headerlink" title="创建新blog命令#"></a>创建新blog命令#</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo n 博客名字</span><br></pre></td></tr></table></figure>
+
+<h3 id="打开博客文档"><a href="#打开博客文档" class="headerlink" title="打开博客文档"></a>打开博客文档</h3><p>编辑文档</p>
+<p><code> &lt;!--more--&gt;以下部分隐藏</code> </p>
+<p>……</p>
+<p>保存文档</p>
+<h3 id="提交文档"><a href="#提交文档" class="headerlink" title="提交文档"></a>提交文档</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+
+<span id="more"></span>
+]]></content>
+      <categories>
+        <category>工具</category>
+      </categories>
+      <tags>
+        <tag>blog</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>TypeScript</title>
     <url>/posts/cc59.html</url>
     <content><![CDATA[<h1 id="学习计划"><a href="#学习计划" class="headerlink" title="学习计划"></a>学习计划</h1><p><strong>阶段 1：入门</strong></p>
