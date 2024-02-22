@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>“Hexo使用教程”</title>
+    <title>Hexo使用教程</title>
     <url>/posts/42bd.html</url>
     <content><![CDATA[<h1 id="HEXO快捷指令"><a href="#HEXO快捷指令" class="headerlink" title="HEXO快捷指令"></a>HEXO快捷指令</h1><h3 id="创建新blog命令"><a href="#创建新blog命令" class="headerlink" title="创建新blog命令#"></a>创建新blog命令#</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo n 博客名字</span><br></pre></td></tr></table></figure>
 
